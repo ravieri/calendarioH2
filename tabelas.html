@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Jogos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e; /* Fundo escuro */
+            color: #ffffff; /* Texto claro */
+        }
+        header {
+            background-color: #0d0d21; /* Fundo superior */
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .tabs-container, .sub-tabs-container {
+            background-color: #282846;
+            padding: 10px;
+        }
+        .tab, .sub-tab {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #3b3b5e;
+            color: white;
+            border-radius: 5px;
+        }
+        .tab:hover, .sub-tab:hover {
+            background-color: #494973;
+        }
+        .tab-content, .sub-tab-content {
+            display: none;
+            padding: 10px;
+            background-color: #2d2d4f;
+            border: 1px solid #494973;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .tab-content.active, .sub-tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>Calendário de Jogos</div>
+</header>
+
+<div class="tabs-container">
+    <!-- Abas principais de Data -->
+    <div class="tab" onclick="openTab(event, 'data1')">11/10/2024 - 18/10/2024</div>
+    <div class="tab" onclick="openTab(event, 'data2')">18/10/2024 - 25/10/2024</div>
+</div>
+
+<!-- Conteúdo da aba Data 1 -->
+<div id="data1" class="tab-content">
+    <h2>Jogos de 11/10/2024 - 18/10/2024</h2>
+
+    <!-- Sub-abas -->
+    <div class="sub-tabs-container">
+        <div class="sub-tab" onclick="openSubTab(event, 'futebol1')">Futebol</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'tennis1')">Tennis</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'basquete1')">Basquete</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'cs1')">CS 2.0</div>
+    </div>
+
+    <!-- Conteúdo da sub-aba Futebol para Data 1 -->
+    <div id="futebol1" class="sub-tab-content">
+        <h3>Futebol</h3>
+        <h4>Imagem Futebol Brasil</h4>
+        <img src="Brasil18-10.png" alt="Imagem Futebol Brasil" style="width: 100%; max-width: 1400px; margin-top: 10px;">
+        <h4>Imagem Futebol Internacional</h4>
+        <img src="internacional18-10.png" alt="Imagem Futebol Internacional" style="width: 100%; max-width: 1400px; margin-top: 10px;">
+    </div>
+
+    <!-- Conteúdo da sub-aba Tennis para Data 1 -->
+    <div id="tennis1" class="sub-tab-content">
+        <h3>Tennis</h3>
+        <img src="tennis18-10.png" alt="Imagem Tennis" style="width: 100%; max-width: 1400px; margin-top: 10px;">
+    </div>
+
+    <!-- Conteúdo da sub-aba Basquete para Data 1 -->
+    <div id="basquete1" class="sub-tab-content">
+        <h3>Basquete</h3>
+        <img src="basquete18-10.png" alt="Imagem Basquete" style="width: 100%; max-width: 1400px; margin-top: 10px;">
+    </div>
+
+    <!-- Conteúdo da sub-aba CS 2.0 para Data 1 -->
+    <div id="cs1" class="sub-tab-content">
+        <h3>CS 2.0</h3>
+        <img src="cs18-10.png" alt="Imagem CS 2.0" style="width: 100%; max-width: 1400px; margin-top: 10px;">
+    </div>
+</div>
+
+<!-- Conteúdo da aba Data 2 -->
+<div id="data2" class="tab-content">
+    <h2>Jogos de 18/10/2024 - 25/10/2024</h2>
+
+    <!-- Sub-abas -->
+    <div class="sub-tabs-container">
+        <div class="sub-tab" onclick="openSubTab(event, 'futebol2')">Futebol</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'tennis2')">Tennis</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'basquete2')">Basquete</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'cs2')">CS 2.0</div>
+    </div>
+
+    <!-- Conteúdo da sub-aba Futebol para Data 2 -->
+    <div id="futebol2" class="sub-tab-content">
+        <h3>Futebol</h3>
+        <p>Conteúdo de Futebol para Data 2 aparecerá aqui.</p>
+    </div>
+
+    <!-- Conteúdo da sub-aba Tennis para Data 2 -->
+    <div id="tennis2" class="sub-tab-content">
+        <h3>Tennis</h3>
+        <p>Conteúdo de Tennis para Data 2 aparecerá aqui.</p>
+    </div>
+
+    <!-- Conteúdo da sub-aba Basquete para Data 2 -->
+    <div id="basquete2" class="sub-tab-content">
+        <h3>Basquete</h3>
+        <p>Conteúdo de Basquete para Data 2 aparecerá aqui.</p>
+    </div>
+
+    <!-- Conteúdo da sub-aba CS 2.0 para Data 2 -->
+    <div id="cs2" class="sub-tab-content">
+        <h3>CS 2.0</h3>
+        <p>Conteúdo de CS 2.0 para Data 2 aparecerá aqui.</p>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+
+    function openSubTab(evt, subTabName) {
+        var i, subtabcontent;
+        subtabcontent = document.getElementsByClassName("sub-tab-content");
+        for (i = 0; i < subtabcontent.length; i++) {
+            subtabcontent[i].style.display = "none";
+        }
+        document.getElementById(subTabName).style.display = "block";
+    }
+
+    // Abrir a aba principal padrão
+    document.getElementsByClassName("tab")[0].click();
+</script>
+
+</body>
+</html>
