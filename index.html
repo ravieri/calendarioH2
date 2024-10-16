@@ -17,6 +17,13 @@
             color: #ffffff;
             font-size: 24px;
             font-weight: bold;
+            position: relative; /* Para o logo */
+        }
+        .header-logo {
+            position: absolute; /* Faz o logo flutuar na posição */
+            left: 20px; /* Distância do lado esquerdo */
+            top: 20px; /* Distância do topo */
+            width: 100px; /* Ajuste a largura do logo conforme necessário */
         }
         .tabs-container, .sub-tabs-container {
             background-color: #282846;
@@ -50,6 +57,7 @@
 <body>
 
 <header>
+    <img src="h2bet_logo.png" alt="H2BET" class="header-logo"> <!-- Adicione o logo aqui -->
     <div>Calendário de Jogos</div>
 </header>
 
@@ -57,6 +65,7 @@
     <!-- Abas principais de Data -->
     <div class="tab" onclick="openTab(event, 'data1')">11/10/2024 - 18/10/2024</div>
     <div class="tab" onclick="openTab(event, 'data2')">19/10/2024 - 25/10/2024</div>
+    <div class="tab" onclick="openTab(event, 'data3')">26/10/2024 - 01/11/2024</div> <!-- Nova aba de Outubro -->
 </div>
 
 <!-- Conteúdo da aba Data 1 -->
@@ -101,7 +110,7 @@
 
 <!-- Conteúdo da aba Data 2 -->
 <div id="data2" class="tab-content">
-    <h2>Jogos de 18/10/2024 - 25/10/2024</h2>
+    <h2>Jogos de 19/10/2024 - 25/10/2024</h2>
 
     <!-- Sub-abas -->
     <div class="sub-tabs-container">
@@ -114,25 +123,65 @@
     <!-- Conteúdo da sub-aba Futebol para Data 2 -->
     <div id="futebol2" class="sub-tab-content">
         <h3>Futebol</h3>
-        <p>Conteúdo de Futebol para Data 2 aparecerá aqui.</p>
+        <h4>Imagem Futebol Brasil</h4>
+        <img src="Brasil19-25.png" alt="Imagem Futebol Brasil" style="width: 100%; max-width: 1400px; margin-top: 10px;">
+        <h4>Imagem Futebol Internacional</h4>
+        <img src="internacional19-25.png" alt="Imagem Futebol Internacional" style="width: 100%; max-width: 1400px; margin-top: 10px;">
     </div>
 
     <!-- Conteúdo da sub-aba Tennis para Data 2 -->
     <div id="tennis2" class="sub-tab-content">
         <h3>Tennis</h3>
-        <p>Conteúdo de Tennis para Data 2 aparecerá aqui.</p>
+        <img src="" alt="Imagem Tennis" style="width: 100%; max-width: 1400px; margin-top: 10px;">
     </div>
 
     <!-- Conteúdo da sub-aba Basquete para Data 2 -->
     <div id="basquete2" class="sub-tab-content">
         <h3>Basquete</h3>
-        <p>Conteúdo de Basquete para Data 2 aparecerá aqui.</p>
+        <img src="basquete19-25.png" alt="Imagem Basquete" style="width: 100%; max-width: 1400px; margin-top: 10px;">
     </div>
 
     <!-- Conteúdo da sub-aba CS 2.0 para Data 2 -->
     <div id="cs2" class="sub-tab-content">
         <h3>CS 2.0</h3>
         <p>Conteúdo de CS 2.0 para Data 2 aparecerá aqui.</p>
+    </div>
+</div>
+
+<!-- Conteúdo da aba Data 3 -->
+<div id="data3" class="tab-content">
+    <h2>Jogos de 26/10/2024 - 01/11/2024</h2>
+
+    <!-- Sub-abas -->
+    <div class="sub-tabs-container">
+        <div class="sub-tab" onclick="openSubTab(event, 'futebol3')">Futebol</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'tennis3')">Tennis</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'basquete3')">Basquete</div>
+        <div class="sub-tab" onclick="openSubTab(event, 'cs3')">CS 2.0</div>
+    </div>
+
+    <!-- Conteúdo da sub-aba Futebol para Data 3 -->
+    <div id="futebol3" class="sub-tab-content">
+        <h3>Futebol</h3>
+        <p>Conteúdo de Futebol para a nova data aparecerá aqui.</p>
+    </div>
+
+    <!-- Conteúdo da sub-aba Tennis para Data 3 -->
+    <div id="tennis3" class="sub-tab-content">
+        <h3>Tennis</h3>
+        <p>Conteúdo de Tennis para a nova data aparecerá aqui.</p>
+    </div>
+
+    <!-- Conteúdo da sub-aba Basquete para Data 3 -->
+    <div id="basquete3" class="sub-tab-content">
+        <h3>Basquete</h3>
+        <p>Conteúdo de Basquete para a nova data aparecerá aqui.</p>
+    </div>
+
+    <!-- Conteúdo da sub-aba CS 2.0 para Data 3 -->
+    <div id="cs3" class="sub-tab-content">
+        <h3>CS 2.0</h3>
+        <p>Conteúdo de CS 2.0 para a nova data aparecerá aqui.</p>
     </div>
 </div>
 
