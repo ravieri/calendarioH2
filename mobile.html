@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogos em Destaque</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jogos em Destaque - Mobile</title>
+    <link rel="stylesheet" href="styles-mobile.css"> <!-- Usaremos um CSS separado para o mobile -->
 </head>
 <body>
 
 <header>
     <img src="h2bet_logo.png" alt="H2BET" class="header-logo"> 
     <div class="header-title">
-        <span class="highlight-link" onclick="location.href='events.html'">Ligas em Destaque</span>
+        <span class="highlight-link" onclick="location.href='events.html'">Eventos em Destaque</span>
     </div>
 </header>
 
@@ -36,7 +36,7 @@
         <button class="sport-btn" onclick="showSportImage('basquete')">Basquete</button>
         <button class="sport-btn" onclick="showSportImage('cs')">CS 2.0</button>
         <button class="sport-btn" onclick="showSportImage('mma')">MMA</button>
-        <button class="sport-btn" onclick="showSportImage('vollei')">Vôlei</button>
+        <button class="sport-btn" onclick="showSportImage('volei')">Vôlei</button>
     </div>
 </div>
 
@@ -61,6 +61,14 @@
         const imgContainer = document.getElementById('sport-img-container');
         imgContainer.innerHTML = ''; // Limpa o conteúdo anterior
 
+        const sportImages = {
+            'tennis': date === '1' ? 'tennis18-10.png' : date === '2' ? 'tennis19-25.png' : 'tennis26-01.png',
+            'basquete': date === '1' ? 'basquete18-10.png' : date === '2' ? 'basquete19-25.png' : 'basquete26-01.png',
+            'cs': date === '1' ? 'cs18-10.png' : date === '2' ? 'cs19-25.png' : 'cs26-01.png',
+            'mma': date === '1' ? 'mma18-10.png' : date === '2' ? 'mma19-25.png' : 'mma26-01.png',
+            'volei': date === '1' ? 'vollei18-10.png' : date === '2' ? 'vollei19-25.png' : 'vollei26-01.png' // Corrigido aqui para "vollei"
+        };
+
         // Se o esporte for Futebol, exibe as imagens Brasil e Internacional conforme o intervalo
         if (sport === 'futebol') {
             if (date === '1') { // Intervalo de 11/10 - 18/10
@@ -80,14 +88,6 @@
                 imgContainer.innerHTML += '<img src="internacional26-01.png" alt="Internacional" style="width: 100%; max-width: 600px;">';
             }
         } else {
-            const sportImages = {
-                'tennis': date === '1' ? 'tennis18-10.png' : date === '2' ? 'tennis19-25.png' : 'tennis26-01.png',
-                'basquete': date === '1' ? 'basquete18-10.png' : date === '2' ? 'basquete19-25.png' : 'basquete26-01.png',
-                'cs': date === '1' ? 'cs18-10.png' : date === '2' ? 'cs19-25.png' : 'cs26-01.png',
-                'mma': date === '1' ? 'mma18-10.png' : date === '2' ? 'mma19-25.png' : 'mma26-01.png',
-                'vollei': date === '1' ? 'vollei18-10.png' : date === '2' ? 'vollei19-25.png' : 'vollei26-01.png'
-            };
-
             // Exibe a imagem para o esporte selecionado
             imgContainer.innerHTML = `<img src="${sportImages[sport]}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
         }

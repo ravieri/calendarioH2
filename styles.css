@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e; /* Fundo escuro */
+    color: #ffffff; /* Texto claro */
+}
+
+header {
+    background-color: #0d0d21; /* Fundo superior */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative; /* Para o logo */
+}
+
+.header-logo {
+    position: absolute; /* Faz o logo flutuar na posição */
+    left: 20px; /* Distância do lado esquerdo */
+    top: 20px; /* Distância do topo */
+    width: 100px; /* Ajuste a largura do logo conforme necessário */
+}
+
+/* Estilos para as abas e o conteúdo das abas no calendário */
+
+.tabs-container, .sub-tabs-container {
+    background-color: #282846;
+    padding: 10px;
+}
+
+.tab, .sub-tab {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #3b3b5e;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animações */
+}
+
+.tab:hover, .sub-tab:hover {
+    background-color: #494973;
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+}
+
+.tab-content, .sub-tab-content {
+    display: none;
+    padding: 10px;
+    background-color: #2d2d4f;
+    border: 1px solid #494973;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.tab-content.active, .sub-tab-content.active {
+    display: block;
+}
+
+.tab-active, .sub-tab-active {
+    background-color: #6161a2; /* Cor ao ativar */
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.button-active {
+    background-color: #494973; /* Cor ao clicar */
+    transform: scale(0.95); /* Reduz levemente o tamanho ao clicar */
+    transition: transform 0.1s ease; /* Adiciona animação suave ao efeito de pressionamento */
+}
+
+/* Estilos para o seletor de mês e lista de eventos */
+.month-selector-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.custom-month-selector {
+    padding: 10px 15px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #6a0dad; /* Roxo escuro */
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-month-selector:hover {
+    background-color: #9a4cdd; /* Tom de roxo mais claro no hover */
+    color: #ffffff;
+}
+
+.events {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.custom-event-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.custom-event-list li {
+    background-color: #2d2d4f;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-event-list li:hover {
+    background-color: #3b3b5e;
+}
+
+/* Estilos para o seletor de datas */
+.date-selector-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.custom-date-selector {
+    padding: 10px 15px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #6a0dad; /* Roxo escuro */
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-date-selector:hover {
+    background-color: #9a4cdd; /* Tom de roxo mais claro no hover */
+    color: #ffffff;
+}
+
+/* Estilos para a lista de esportes */
+.sports-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.sport-btn {
+    background-color: #3b3b5e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sport-btn:hover {
+    background-color: #494973;
+    transform: scale(1.05);
+}
+
+.sport-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sport-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}

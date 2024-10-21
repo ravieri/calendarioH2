@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0d0d21;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    position: relative;
+}
+
+.header-logo {
+    width: 80px; /* Tamanho menor do logo para mobile */
+}
+
+.header-title {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Estilos para o seletor de datas */
+.month-selector-container {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column; /* Coloca o seletor abaixo do texto no mobile */
+    align-items: center;
+}
+
+.custom-month-selector {
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #6a0dad;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 90%;
+}
+
+/* Estilos para os botões de esportes */
+.sports-buttons {
+    display: flex;
+    flex-direction: column; /* Coloca os botões um embaixo do outro no mobile */
+    align-items: center;
+}
+
+.sport-btn {
+    background-color: #3b3b5e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    width: 90%;
+    cursor: pointer;
+}
+
+.sport-btn:hover {
+    background-color: #494973;
+}
+
+/* Estilos para a imagem do esporte */
+.sport-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sport-image img {
+    max-width: 90%;
+    border-radius: 10px;
+}
