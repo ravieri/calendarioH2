@@ -20,8 +20,27 @@
         }
         .splash-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Preenche a tela inteira */
+            height: auto; /* Preserva a proporção da imagem */
+            object-fit: cover; /* Preenche a tela */
+        }
+
+        /* Estilos específicos para dispositivos móveis */
+        @media (max-width: 768px) {
+            .splash-container img {
+                width: 100%;
+                height: auto; /* Ajuste a altura automaticamente para mobile */
+                object-fit: contain; /* Não corta a imagem */
+            }
+        }
+
+        /* Estilos para dispositivos ainda menores */
+        @media (max-width: 480px) {
+            .splash-container img {
+                width: 100%;
+                height: auto; /* Para telas menores */
+                object-fit: contain;
+                padding: 10px; /* Adiciona espaçamento */
+            }
         }
     </style>
     <script>
