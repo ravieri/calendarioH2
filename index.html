@@ -17,34 +17,33 @@
             text-align: center;
             width: 100%;
             height: 100%;
+            overflow: hidden; /* Garante que a imagem não saia da tela */
         }
         .splash-container img {
             width: 100%;
-            height: auto; /* Preserva a proporção da imagem */
-            object-fit: cover; /* Preenche a tela */
+            height: 100%;
+            object-fit: cover; /* Faz a imagem preencher a tela */
         }
 
-        /* Estilos específicos para dispositivos móveis */
+        /* Estilos para dispositivos móveis */
         @media (max-width: 768px) {
             .splash-container img {
-                width: 100%;
-                height: auto; /* Ajuste a altura automaticamente para mobile */
-                object-fit: contain; /* Não corta a imagem */
+                height: auto; /* Para garantir que a altura se ajuste no mobile */
+                object-fit: contain; /* Mostra a imagem inteira no mobile sem cortar */
             }
         }
 
-        /* Estilos para dispositivos ainda menores */
-        @media (max-width: 480px) {
+        /* Estilos para telas muito grandes (desktop grandes) */
+        @media (min-width: 1440px) {
             .splash-container img {
-                width: 100%;
-                height: auto; /* Para telas menores */
-                object-fit: contain;
-                padding: 10px; /* Adiciona espaçamento */
+                width: auto;
+                height: 100%; /* Faz a imagem preencher a altura da tela no desktop */
+                object-fit: cover; /* Mantém a proporção e cobre a tela */
             }
         }
     </style>
     <script>
-        // Verifica se o splash já foi mostrado, e redireciona após 3 segundos
+        // Redireciona para a página inicial após 3 segundos
         window.onload = function() {
             setTimeout(function() {
                 window.location.href = "home.html";
