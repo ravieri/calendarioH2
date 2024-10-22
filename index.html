@@ -24,6 +24,9 @@
         <option value="1">11/10/2024 - 18/10/2024</option>
         <option value="2">19/10/2024 - 25/10/2024</option>
         <option value="3">26/10/2024 - 01/11/2024</option>
+        <option value="4">02/11/2024 - 08/11/2024</option>
+        <option value="5">09/11/2024 - 15/11/2024</option>
+        <option value="6">16/11/2024 - 22/11/2024</option>
     </select>
 </div>
 
@@ -61,35 +64,65 @@
         const imgContainer = document.getElementById('sport-img-container');
         imgContainer.innerHTML = ''; // Limpa o conteúdo anterior
 
-        // Se o esporte for Futebol, exibe as imagens Brasil e Internacional conforme o intervalo
-        if (sport === 'futebol') {
-            if (date === '1') { // Intervalo de 11/10 - 18/10
-                imgContainer.innerHTML += '<h3>Brasil</h3>';
-                imgContainer.innerHTML += '<img src="Brasil18-10.png" alt="Brasil" style="width: 100%; max-width: 600px;">';
-                imgContainer.innerHTML += '<h3>Internacional</h3>';
-                imgContainer.innerHTML += '<img src="internacional18-10.png" alt="Internacional" style="width: 100%; max-width: 600px;">';
-            } else if (date === '2') { // Intervalo de 19/10 - 25/10
-                imgContainer.innerHTML += '<h3>Brasil</h3>';
-                imgContainer.innerHTML += '<img src="Brasil19-25.png" alt="Brasil" style="width: 100%; max-width: 600px;">';
-                imgContainer.innerHTML += '<h3>Internacional</h3>';
-                imgContainer.innerHTML += '<img src="internacional19-25.png" alt="Internacional" style="width: 100%; max-width: 600px;">';
-            } else if (date === '3') { // Intervalo de 26/10 - 01/11
-                imgContainer.innerHTML += '<h3>Brasil</h3>';
-                imgContainer.innerHTML += '<img src="manu.webp" alt="Brasil" style="width: 100%; max-width: 600px;">';
-                imgContainer.innerHTML += '<h3>Internacional</h3>';
-                imgContainer.innerHTML += '<img src="internacional26-01.png" alt="Internacional" style="width: 100%; max-width: 600px;">';
+        const sportImages = {
+            'futebol': {
+                '1': ['Brasil18-10.png', 'internacional18-10.png'],
+                '2': ['Brasil19-25.png', 'internacional19-25.png'],
+                '3': ['manu.webp', 'manu.webp'],
+                '4': ['manu.webp', 'manu.webp'],
+                '5': ['manu.webp', 'manu.webp'],
+                '6': ['manu.webp', 'manu.webp']
+            },
+            'tennis': {
+                '1': 'tennis18-10.png',
+                '2': 'tennis19-25.png',
+                '3': 'manu.webp',
+                '4': 'manu.webp',
+                '5': 'manu.webp',
+                '6': 'manu.webp'
+            },
+            'basquete': {
+                '1': 'basquete18-10.png',
+                '2': 'basquete19-25.png',
+                '3': 'manu.webp',
+                '4': 'manu.webp',
+                '5': 'manu.webp',
+                '6': 'manu.webp'
+            },
+            'cs': {
+                '1': 'cs18-10.png',
+                '2': 'manu.webp',
+                '3': 'manu.webp',
+                '4': 'manu.webp',
+                '5': 'manu.webp',
+                '6': 'manu.webp'
+            },
+            'mma': {
+                '1': 'manu.webp',
+                '2': 'mma19-25.png',
+                '3': 'manu.webp',
+                '4': 'manu.webp',
+                '5': 'manu.webp',
+                '6': 'manu.webp'
+            },
+            'vollei': {
+                '1': 'manu.webp',
+                '2': 'vollei19-25.png',
+                '3': 'manu.webp',
+                '4': 'manu.webp',
+                '5': 'manu.webp',
+                '6': 'manu.webp'
             }
-        } else {
-            const sportImages = {
-                'tennis': date === '1' ? 'tennis18-10.png' : date === '2' ? 'tennis19-25.png' : 'manu.webp',
-                'basquete': date === '1' ? 'basquete18-10.png' : date === '2' ? 'basquete19-25.png' : 'manu.webp',
-                'cs': date === '1' ? 'cs18-10.png' : date === '2' ? 'manu.webp' : 'manu.webp',
-                'mma': date === '1' ? 'manu.webp' : date === '2' ? 'mma19-25.png' : 'manu.webp',
-                'vollei': date === '1' ? 'manu.webp' : date === '2' ? 'vollei19-25.png' : 'manu.webp'
-            };
+        };
 
-            // Exibe a imagem para o esporte selecionado
-            imgContainer.innerHTML = `<img src="${sportImages[sport]}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
+        if (sport === 'futebol') {
+            const brasilImg = sportImages[sport][date][0];
+            const internacionalImg = sportImages[sport][date][1];
+            imgContainer.innerHTML += `<h3>Brasil</h3><img src="${brasilImg}" alt="Brasil" style="width: 100%; max-width: 600px;">`;
+            imgContainer.innerHTML += `<h3>Internacional</h3><img src="${internacionalImg}" alt="Internacional" style="width: 100%; max-width: 600px;">`;
+        } else {
+            const img = sportImages[sport][date];
+            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
         }
 
         document.getElementById('sport-image').style.display = 'block';
