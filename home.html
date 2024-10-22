@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogos em Destaque</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos gerais */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0d0d21;
+        }
+
+        h1 {
+            color: white;
+            font-size: 36px;
+        }
+
+        /* Estilo para melhorar a aparência dos botões */
+        .sport-btn {
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sport-btn:hover {
+            background-color: #9a4cdd;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efeito de profundidade */
+        }
+
+        .sport-btn:active {
+            transform: scale(0.98); /* Efeito de clique */
+            background-color: #7e41c4;
+        }
+
+        /* Animação suave para carregar imagens */
+        .sport-image img {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .sport-image img.loaded {
+            opacity: 1;
+        }
+
+        /* Layout das seções */
+        .month-selector-container, .sports-buttons, .sport-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sport-image {
+            margin-top: 40px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -44,7 +112,7 @@
 </div>
 
 <!-- Container da Imagem do Esporte -->
-<div id="sport-image" class="sport-image" style="display:none; margin-top: 20px;">
+<div id="sport-image" class="sport-image" style="display:none;">
     <h2>Imagem do Esporte:</h2>
     <div id="sport-img-container">
         <!-- As imagens dos esportes serão adicionadas aqui dinamicamente -->
@@ -126,6 +194,14 @@
         }
 
         document.getElementById('sport-image').style.display = 'block';
+
+        // Adiciona classe 'loaded' quando a imagem é carregada
+        const images = imgContainer.querySelectorAll('img');
+        images.forEach(image => {
+            image.addEventListener('load', () => {
+                image.classList.add('loaded');
+            });
+        });
     }
 </script>
 

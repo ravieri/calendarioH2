@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogos em Destaque - Mobile</title>
-    <link rel="stylesheet" href="styles-mobile.css"> <!-- Usaremos um CSS separado para o mobile -->
+    <link rel="stylesheet" href="styles-mobile.css">
+    <style>
+        /* Estilos de botões melhorados */
+        .sport-btn {
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sport-btn:hover {
+            background-color: #9a4cdd;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efeito de profundidade */
+        }
+
+        .sport-btn:active {
+            transform: scale(0.98); /* Efeito de clique */
+            background-color: #7e41c4;
+        }
+
+        /* Animação suave para imagens */
+        .sport-image img {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .sport-image img.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
@@ -36,12 +73,12 @@
         <button class="sport-btn" onclick="showSportImage('basquete')">Basquete</button>
         <button class="sport-btn" onclick="showSportImage('cs')">CS 2.0</button>
         <button class="sport-btn" onclick="showSportImage('mma')">MMA</button>
-        <button class="sport-btn" onclick="showSportImage('volei')">Vôlei</button>
+        <button class="sport-btn" onclick="showSportImage('vollei')">Vôlei</button>
     </div>
 </div>
 
 <!-- Container da Imagem do Esporte -->
-<div id="sport-image" class="sport-image" style="display:none; margin-top: 20px;">
+<div id="sport-image" class="sport-image" style="display:none;">
     <h2>Imagem do Esporte:</h2>
     <div id="sport-img-container">
         <!-- As imagens dos esportes serão adicionadas aqui dinamicamente -->
@@ -62,37 +99,37 @@
         imgContainer.innerHTML = ''; // Limpa o conteúdo anterior
 
         const sportImages = {
-            'tennis': date === '1' ? 'tennis18-10.png' : date === '2' ? 'tennis19-25.png' : 'tennis26-01.png',
-            'basquete': date === '1' ? 'basquete18-10.png' : date === '2' ? 'basquete19-25.png' : 'basquete26-01.png',
-            'cs': date === '1' ? 'cs18-10.png' : date === '2' ? 'cs19-25.png' : 'cs26-01.png',
-            'mma': date === '1' ? 'mma18-10.png' : date === '2' ? 'mma19-25.png' : 'mma26-01.png',
-            'volei': date === '1' ? 'vollei18-10.png' : date === '2' ? 'vollei19-25.png' : 'vollei26-01.png' // Corrigido aqui para "vollei"
+            'futebol': {
+                '1': ['Brasil18-10.png', 'internacional18-10.png'],
+                '2': ['Brasil19-25.png', 'internacional19-25.png'],
+                '3': ['manu.webp', 'manu.webp']
+            },
+            'tennis': {
+                '1': 'tennis18-10.png',
+                '2': 'tennis19-25.png',
+                '3': 'manu.webp'
+            }
         };
 
-        // Se o esporte for Futebol, exibe as imagens Brasil e Internacional conforme o intervalo
         if (sport === 'futebol') {
-            if (date === '1') { // Intervalo de 11/10 - 18/10
-                imgContainer.innerHTML += '<h3>Brasil</h3>';
-                imgContainer.innerHTML += '<img src="Brasil18-10.png" alt="Brasil" style="width: 100%; max-width: 600px;">';
-                imgContainer.innerHTML += '<h3>Internacional</h3>';
-                imgContainer.innerHTML += '<img src="internacional18-10.png" alt="Internacional" style="width: 100%; max-width: 600px;">';
-            } else if (date === '2') { // Intervalo de 19/10 - 25/10
-                imgContainer.innerHTML += '<h3>Brasil</h3>';
-                imgContainer.innerHTML += '<img src="Brasil19-25.png" alt="Brasil" style="width: 100%; max-width: 600px;">';
-                imgContainer.innerHTML += '<h3>Internacional</h3>';
-                imgContainer.innerHTML += '<img src="internacional19-25.png" alt="Internacional" style="width: 100%; max-width: 600px;">';
-            } else if (date === '3') { // Intervalo de 26/10 - 01/11
-                imgContainer.innerHTML += '<h3>Brasil</h3>';
-                imgContainer.innerHTML += '<img src="Brasil26-01.png" alt="Brasil" style="width: 100%; max-width: 600px;">';
-                imgContainer.innerHTML += '<h3>Internacional</h3>';
-                imgContainer.innerHTML += '<img src="internacional26-01.png" alt="Internacional" style="width: 100%; max-width: 600px;">';
-            }
+            const brasilImg = sportImages[sport][date][0];
+            const internacionalImg = sportImages[sport][date][1];
+            imgContainer.innerHTML += `<h3>Brasil</h3><img src="${brasilImg}" alt="Brasil" style="width: 100%; max-width: 600px;">`;
+            imgContainer.innerHTML += `<h3>Internacional</h3><img src="${internacionalImg}" alt="Internacional" style="width: 100%; max-width: 600px;">`;
         } else {
-            // Exibe a imagem para o esporte selecionado
-            imgContainer.innerHTML = `<img src="${sportImages[sport]}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
+            const img = sportImages[sport][date];
+            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
         }
 
         document.getElementById('sport-image').style.display = 'block';
+
+        // Adiciona classe 'loaded' quando a imagem é carregada
+        const images = imgContainer.querySelectorAll('img');
+        images.forEach(image => {
+            image.addEventListener('load', () => {
+                image.classList.add('loaded');
+            });
+        });
     }
 </script>
 
