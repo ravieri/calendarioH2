@@ -24,6 +24,7 @@
         h1 {
             color: white;
             font-size: 36px;
+            text-align: center; /* Centraliza o título */
         }
 
         /* Estilo para melhorar a aparência dos botões */
@@ -63,8 +64,11 @@
         }
 
         /* Layout das seções */
-        .month-selector-container, .sports-buttons, .sport-image {
-            text-align: center;
+        .month-selector-container {
+            display: flex;
+            justify-content: center; /* Centraliza o seletor de datas */
+            align-items: center;
+            flex-direction: column; /* Mantém o label acima do seletor */
             margin-top: 20px;
         }
 
