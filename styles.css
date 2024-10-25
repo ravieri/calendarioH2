@@ -168,12 +168,21 @@ header {
 }
 
 .sport-image {
-    text-align: center;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centraliza as imagens */
+    align-items: center;
+    margin-top: 40px;
 }
 
 .sport-image img {
     max-width: 100%;
+    height: auto;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+/* Limite de tamanho das imagens */
+.sport-image img {
+    max-width: 90%; /* Garante que as imagens não ocupem mais de 90% da largura */
+    height: auto;
 }

@@ -50,17 +50,40 @@
             background-color: #7e41c4;
         }
 
-        /* Animação suave para carregar imagens */
-        .sport-image img {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        /* Ajuste nas imagens para maior visibilidade e centralização */
+        .sport-image {
+            display: flex;
+            justify-content: center; /* Centraliza as imagens horizontalmente */
+            align-items: center;
+            margin-top: 40px;
+            width: 100%; /* Garante que o container ocupe toda a largura */
         }
 
-        .sport-image img.loaded {
-            opacity: 1;
+        .sport-image img {
+            width: 100%; /* Garante que a imagem ocupe toda a largura do container */
+            max-width: 1000px; /* Define um tamanho máximo para imagens grandes */
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        /* Exceção para a imagem de basquete */
+        .sport-image img.basquete {
+            max-width: 1200px; /* Aumenta o tamanho máximo das imagens de basquete */
+        }
+
+        /* Exceção para a imagem de CS 2.0 */
+        .sport-image img.cs {
+            max-width: 1200px; /* Aumenta o tamanho máximo das imagens de CS 2.0 */
+        }
+
+        /* Adicionando centralização geral para o conteúdo */
+        #sport-img-container {
+            display: flex;
+            justify-content: center; /* Centraliza as imagens dentro do container */
+            align-items: center;
+            flex-direction: column; /* Certifica que o conteúdo fique centralizado em coluna */
+            width: 100%; /* Garante que o container ocupe a largura completa */
         }
 
         /* Layout das seções */
@@ -70,10 +93,6 @@
             align-items: center;
             flex-direction: column; /* Mantém o label acima do seletor */
             margin-top: 20px;
-        }
-
-        .sport-image {
-            margin-top: 40px;
         }
 
     </style>
@@ -190,11 +209,17 @@
         if (sport === 'futebol') {
             const brasilImg = sportImages[sport][date][0];
             const internacionalImg = sportImages[sport][date][1];
-            imgContainer.innerHTML += `<h3>Brasil</h3><img src="${brasilImg}" alt="Brasil" style="width: 100%; max-width: 600px;">`;
-            imgContainer.innerHTML += `<h3>Internacional</h3><img src="${internacionalImg}" alt="Internacional" style="width: 100%; max-width: 600px;">`;
+            imgContainer.innerHTML += `<h3>Brasil</h3><img src="${brasilImg}" alt="Brasil" style="width: 100%; max-width: 1000px;">`;
+            imgContainer.innerHTML += `<h3>Internacional</h3><img src="${internacionalImg}" alt="Internacional" style="width: 100%; max-width: 1000px;">`;
+        } else if (sport === 'basquete') {
+            const img = sportImages[sport][date];
+            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" class="basquete" style="width: 100%;">`;
+        } else if (sport === 'cs') {
+            const img = sportImages[sport][date];
+            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" class="cs" style="width: 100%;">`;
         } else {
             const img = sportImages[sport][date];
-            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
+            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" style="width: 100%; max-width: 1000px;">`;
         }
 
         document.getElementById('sport-image').style.display = 'block';
