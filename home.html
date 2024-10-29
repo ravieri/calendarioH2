@@ -13,90 +13,124 @@
             padding: 0;
             background-color: #1a1a2e;
             font-family: 'Arial', sans-serif;
+            color: #ffffff;
         }
 
         header {
-    background-color: #0d0d21;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #494973; /* Borda para destaque */
-    position: relative;
-}
-.header-logo {
-    width: 80px; /* Diminui o tamanho do logo */
-}
+            background-color: #0d0d21;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #494973;
+            position: relative;
+        }
+
+        .header-logo {
+            width: 80px;
+        }
 
         h1 {
             color: white;
             font-size: 36px;
-            text-align: center; /* Centraliza o título */
-        }
-
-        /* Estilo para melhorar a aparência dos botões */
-        .sport-btn {
-    background: linear-gradient(135deg, #6a0dad, #494973);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-.sport-btn:hover {
-    background: linear-gradient(135deg, #9a4cdd, #6161a2);
-    transform: scale(1.1); /* Aumenta levemente no hover */
-}
-
-        .sport-btn:active {
-            transform: scale(0.98); /* Efeito de clique */
-            background-color: #7e41c4;
-        }
-
-        /* Ajuste nas imagens para maior visibilidade e centralização */
-        .sport-image {
-    border-radius: 10px;
-    padding: 15px;
-    background-color: #282846;
-    margin-top: 20px;
-    text-align: center; /* Centraliza as imagens e textos */
-}
-.sport-image img {
-    border-radius: 8px;
-    border: 2px solid #494973;
-}
-.custom-event-list li {
-    padding: 12px;
-    border-left: 4px solid #6a0dad; /* Adiciona uma borda colorida à esquerda */
-    background-color: #2d2d4f;
-    transition: background-color 0.3s;
-}
-
-        /* Exceção para a imagem de basquete */
-        .sport-image img.basquete {
-            max-width: 1200px; /* Aumenta o tamanho máximo das imagens de basquete */
-        }
-
-        /* Exceção para a imagem de CS 2.0 */
-        .sport-image img.cs {
-            max-width: 1200px; /* Aumenta o tamanho máximo das imagens de CS 2.0 */
-        }
-
-        /* Adicionando centralização geral para o conteúdo */
-        #sport-img-container {
-            display: flex;
-            justify-content: center; /* Centraliza as imagens dentro do container */
-            align-items: center;
-            flex-direction: column; /* Certifica que o conteúdo fique centralizado em coluna */
-            width: 100%; /* Garante que o container ocupe a largura completa */
-        }
-
-        /* Layout das seções */
-        .month-selector-container {
-            display: flex;
-            justify-content: center; /* Centraliza o seletor de datas */
-            align-items: center;
-            flex-direction: column; /* Mantém o label acima do seletor */
+            text-align: center;
             margin-top: 20px;
         }
 
+        /* Carrossel de Destaque */
+        .carousel-container {
+            position: relative;
+            max-width: 500px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .carousel-item h3 {
+            font-size: 20px;
+            color: #ffdd57;
+        }
+
+        /* Botões de navegação */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        /* Estilos para o seletor de datas e esportes */
+        .month-selector-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .sport-btn {
+            background: linear-gradient(135deg, #6a0dad, #494973);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 5px;
+        }
+
+        .sport-btn:hover {
+            background: linear-gradient(135deg, #9a4cdd, #6161a2);
+            transform: scale(1.1);
+        }
+
+        .sport-btn:active {
+            transform: scale(0.98);
+            background-color: #7e41c4;
+        }
+
+        /* Estilos para a tabela de jogos */
+        .sport-image {
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #282846;
+            margin: 20px auto;
+            text-align: center;
+            max-width: 1000px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .sport-image img {
+            border-radius: 8px;
+            border: 2px solid #494973;
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -109,6 +143,63 @@
 </header>
 
 <h1>Jogos em Destaque</h1>
+
+<!-- Carrossel de Jogos em Destaque -->
+<div class="carousel-container">
+    <div class="carousel-slide" id="carousel-slide">
+        <div class="carousel-item">
+            <h3>
+                <img src="https://ssl.gstatic.com/onebox/media/sports/logos/OWVFKuHrQuf4q2Wk0hEmSA_64x64.png" alt="Internacional" class="team-icon">
+                Internacional x 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flamengo_braz_logo.svg/1200px-Flamengo_braz_logo.svg.png" alt="Flamengo" class="team-icon">
+                Flamengo
+            </h3>
+            <p>Data: 30/10/2024</p>
+            <p>Horário: 19:00</p>
+            <p>Local: Estádio Beira-Rio</p>
+            <p>Descrição: Grande rivalidade no sul do Brasil.</p>
+        </div>        
+        <div class="carousel-item">
+            <h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHCtWnelj9MxEwCs3RCUtD_Um04lj96AR55g&s" alt="Internacional" class="team-icon">
+                Alexander Zverev x 
+                <img src="https://pbs.twimg.com/profile_images/964618645388308480/Mo59lqJu_400x400.jpg" alt="Flamengo" class="team-icon">
+                Tallon Griekspoor
+            </h3>
+            <p>Data: 30/10/2024</p>
+            <p>Horário: 15:00</p>
+            <p>Local: PARIS, FRANCE</p>
+            <p>Descrição: Grande rivalidade no sul do Brasil.</p>
+        </div>
+        <div class="carousel-item">
+            <h3>
+                <img src="https://ssl.gstatic.com/onebox/media/sports/logos/GWXetBOkODOWR3p2NIBqJg_64x64.png" alt="Al Nassr" class="team-icon">
+                Al Nassr Riyadh x 
+                <img src="https://ssl.gstatic.com/onebox/media/sports/logos/HGVsnyWvMiGVotxhgicdSQ_64x64.png" alt="Al Hilal" class="team-icon">
+                Al Hilal Riyadh
+            </h3>
+            <p>Data: 01/11/2024</p>
+            <p>Horário: 15:00</p>
+            <p>Local: Arábia</p>
+            <p>Descrição: Confronto de alto nível entre Al Nassr de CR7 e Al Hilal de Neymar.</p>
+        </div>
+        <div class="carousel-item">
+            <h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Los_Angeles_Clippers_%282024%29.svg/1200px-Los_Angeles_Clippers_%282024%29.svg.png" alt="Clippers" class="team-icon">
+                Clippers x 
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Phoenix_Suns_logo.svg" alt="Suns" class="team-icon">
+                Suns
+            </h3>
+            <p>Data: 31/10/2024</p>
+            <p>Horário: 23:30</p>
+            <p>Local: EUA</p>
+            <p>Descrição: Confronto sempre acirrado entre Clippers e Suns, com grande potencial de aposta e audiência no Brasil.</p>
+        </div>
+    </div>
+</div>
+    <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
+</div>
 
 <!-- Seletor de Intervalo de Datas -->
 <div class="month-selector-container">
@@ -148,8 +239,6 @@
     </div>
 </div>
 
-
-
 <!-- Container da Imagem do Esporte -->
 <div id="sport-image" class="sport-image" style="display:none;">
     <h2>Imagem do Esporte:</h2>
@@ -159,17 +248,36 @@
 </div>
 
 <script>
-    // Função para exibir os esportes após a seleção de uma data
-    function showSports() {
-        document.getElementById('sports').style.display = 'block';
-        document.getElementById('sport-image').style.display = 'none'; // Oculta a imagem ao selecionar nova data
+    let currentIndex = 0;
+    const carouselSlide = document.getElementById('carousel-slide');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+
+    function updateCarousel() {
+        const slideWidth = carouselItems[0].clientWidth;
+        carouselSlide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
-    // Função para exibir as imagens de esportes ao clicar no botão do esporte
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        updateCarousel();
+    }
+
+    setInterval(nextSlide, 8000);
+
+    function showSports() {
+        document.getElementById('sports').style.display = 'block';
+        document.getElementById('sport-image').style.display = 'none';
+    }
+
     function showSportImage(sport) {
-        const date = document.getElementById('date').value; // Obtém a data selecionada
+        const date = document.getElementById('date').value;
         const imgContainer = document.getElementById('sport-img-container');
-        imgContainer.innerHTML = ''; // Limpa o conteúdo anterior
+        imgContainer.innerHTML = '';
 
         const sportImages = {
             'futebol': {
@@ -181,76 +289,59 @@
                 '6': ['manu.webp', 'manu.webp']
             },
             'tennis': {
-                '1': 'tennis18-10.png',
-                '2': 'tennis19-25.png',
-                '3': 'tennis26-01.png',
-                '4': 'manu.webp',
-                '5': 'manu.webp',
-                '6': 'manu.webp'
+                '1': ['tennis18-10.png'],
+                '2': ['tennis19-25.png'],
+                '3': ['tennis26-01.png'],
+                '4': ['manu.webp'],
+                '5': ['manu.webp'],
+                '6': ['manu.webp']
             },
             'basquete': {
-                '1': 'basquete18-10.png',
-                '2': 'basquete19-25.png',
-                '3': 'basquete26-01.png',
-                '4': 'manu.webp',
-                '5': 'manu.webp',
-                '6': 'manu.webp'
+                '1': ['basquete18-10.png'],
+                '2': ['basquete19-25.png'],
+                '3': ['basquete26-01.png'],
+                '4': ['manu.webp'],
+                '5': ['manu.webp'],
+                '6': ['manu.webp']
             },
             'cs': {
-                '1': 'cs18-10.png',
-                '2': 'cs19-25.png',
-                '3': 'cs26-01.png',
-                '4': 'manu.webp',
-                '5': 'manu.webp',
-                '6': 'manu.webp'
+                '1': ['cs18-10.png'],
+                '2': ['cs19-25.png'],
+                '3': ['cs26-01.png'],
+                '4': ['manu.webp'],
+                '5': ['manu.webp'],
+                '6': ['manu.webp']
             },
             'mma': {
-                '1': 'manu.webp',
-                '2': 'mma19-25.png',
-                '3': 'mma26-01.png',
-                '4': 'manu.webp',
-                '5': 'manu.webp',
-                '6': 'manu.webp'
+                '1': ['mma18-10.png'],
+                '2': ['mma19-25.png'],
+                '3': ['mma26-01.png'],
+                '4': ['manu.webp'],
+                '5': ['manu.webp'],
+                '6': ['manu.webp']
             },
             'vollei': {
-                '1': 'manu.webp',
-                '2': 'vollei19-25.png',
-                '3': 'vollei26-01.png',
-                '4': 'manu.webp',
-                '5': 'manu.webp',
-                '6': 'manu.webp'
+                '1': ['vollei18-10.png'],
+                '2': ['vollei19-25.png'],
+                '3': ['vollei26-01.png'],
+                '4': ['manu.webp'],
+                '5': ['manu.webp'],
+                '6': ['manu.webp']
+                
             }
         };
 
-        if (sport === 'futebol') {
-            const brasilImg = sportImages[sport][date][0];
-            const internacionalImg = sportImages[sport][date][1];
-            imgContainer.innerHTML += `<h3>Brasil</h3><img src="${brasilImg}" alt="Brasil" style="width: 100%; max-width: 1000px;">`;
-            imgContainer.innerHTML += `<h3>Internacional</h3><img src="${internacionalImg}" alt="Internacional" style="width: 100%; max-width: 1000px;">`;
-        } else if (sport === 'basquete') {
-            const img = sportImages[sport][date];
-            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" class="basquete" style="width: 100%;">`;
-        } else if (sport === 'cs') {
-            const img = sportImages[sport][date];
-            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" class="cs" style="width: 100%;">`;
-        } else {
-            const img = sportImages[sport][date];
-            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" style="width: 100%; max-width: 1000px;">`;
-        }
-
-        document.getElementById('sport-image').style.display = 'block';
-
-        // Adiciona classe 'loaded' quando a imagem é carregada
-        const images = imgContainer.querySelectorAll('img');
-        images.forEach(image => {
-            image.addEventListener('load', () => {
-                image.classList.add('loaded');
+        if (sportImages[sport] && sportImages[sport][date]) {
+            const images = sportImages[sport][date];
+            images.forEach(imgSrc => {
+                imgContainer.innerHTML += `<img src="${imgSrc}" alt="${sport} image" style="width: 100%; max-width: 1000px;">`;
             });
-        });
+            document.getElementById('sport-image').style.display = 'block';
+        } else {
+            imgContainer.innerHTML = `<p>Imagens não disponíveis para este esporte e data.</p>`;
+        }
     }
 </script>
-
-
 
 </body>
 </html>
