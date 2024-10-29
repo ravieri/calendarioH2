@@ -6,17 +6,17 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #0d0d21;
-    padding: 15px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 20px;
-    position: relative;
-}
-
 .header-logo {
-    width: 80px; /* Tamanho menor do logo para mobile */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+}
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-title {
@@ -45,9 +45,13 @@ header {
 
 /* Estilos para os botões de esportes */
 .sports-buttons {
-    display: flex;
-    flex-direction: column; /* Coloca os botões um embaixo do outro no mobile */
-    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+.custom-month-selector {
+    width: 95%;
+    padding: 12px;
+    text-align: center;
 }
 
 .sport-btn {
@@ -73,5 +77,5 @@ header {
 
 .sport-image img {
     max-width: 90%;
-    border-radius: 10px;
+    border-radius: 8px;
 }

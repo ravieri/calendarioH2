@@ -16,10 +16,15 @@
         }
 
         header {
-            text-align: center;
-            padding: 20px;
-            background-color: #0d0d21;
-        }
+    background-color: #0d0d21;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #494973; /* Borda para destaque */
+    position: relative;
+}
+.header-logo {
+    width: 80px; /* Diminui o tamanho do logo */
+}
 
         h1 {
             color: white;
@@ -29,21 +34,16 @@
 
         /* Estilo para melhorar a aparência dos botões */
         .sport-btn {
-            background-color: #6a0dad;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .sport-btn:hover {
-            background-color: #9a4cdd;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efeito de profundidade */
-        }
+    background: linear-gradient(135deg, #6a0dad, #494973);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.sport-btn:hover {
+    background: linear-gradient(135deg, #9a4cdd, #6161a2);
+    transform: scale(1.1); /* Aumenta levemente no hover */
+}
 
         .sport-btn:active {
             transform: scale(0.98); /* Efeito de clique */
@@ -52,20 +52,22 @@
 
         /* Ajuste nas imagens para maior visibilidade e centralização */
         .sport-image {
-            display: flex;
-            justify-content: center; /* Centraliza as imagens horizontalmente */
-            align-items: center;
-            margin-top: 40px;
-            width: 100%; /* Garante que o container ocupe toda a largura */
-        }
-
-        .sport-image img {
-            width: 100%; /* Garante que a imagem ocupe toda a largura do container */
-            max-width: 1000px; /* Define um tamanho máximo para imagens grandes */
-            height: auto; /* Mantém a proporção da imagem */
-            border-radius: 10px;
-            margin-top: 10px;
-        }
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #282846;
+    margin-top: 20px;
+    text-align: center; /* Centraliza as imagens e textos */
+}
+.sport-image img {
+    border-radius: 8px;
+    border: 2px solid #494973;
+}
+.custom-event-list li {
+    padding: 12px;
+    border-left: 4px solid #6a0dad; /* Adiciona uma borda colorida à esquerda */
+    background-color: #2d2d4f;
+    transition: background-color 0.3s;
+}
 
         /* Exceção para a imagem de basquete */
         .sport-image img.basquete {
@@ -125,14 +127,28 @@
 <div id="sports" class="sports" style="display:none;">
     <h2>Esportes Disponíveis:</h2>
     <div class="sports-buttons">
-        <button class="sport-btn" onclick="showSportImage('futebol')">Futebol</button>
-        <button class="sport-btn" onclick="showSportImage('tennis')">Tênis</button>
-        <button class="sport-btn" onclick="showSportImage('basquete')">Basquete</button>
-        <button class="sport-btn" onclick="showSportImage('cs')">CS 2.0</button>
-        <button class="sport-btn" onclick="showSportImage('mma')">MMA</button>
-        <button class="sport-btn" onclick="showSportImage('vollei')">Vôlei</button>
+        <button class="sport-btn" onclick="showSportImage('futebol')">
+            <img src="https://img.icons8.com/?size=100&id=59&format=png&color=000000" alt="Futebol" class="btn-icon"> Futebol
+        </button>
+        <button class="sport-btn" onclick="showSportImage('tennis')">
+            <img src="https://img.icons8.com/ios-filled/50/000000/tennis.png" alt="Tênis" class="btn-icon"> Tênis
+        </button>
+        <button class="sport-btn" onclick="showSportImage('basquete')">
+            <img src="https://img.icons8.com/ios-filled/50/000000/basketball.png" alt="Basquete" class="btn-icon"> Basquete
+        </button>
+        <button class="sport-btn" onclick="showSportImage('cs')">
+            <img src="https://img.icons8.com/?size=100&id=jzahITKncvRL&format=png&color=000000" alt="CS 2.0" class="btn-icon"> CS 2.0
+        </button>
+        <button class="sport-btn" onclick="showSportImage('mma')">
+            <img src="https://img.icons8.com/?size=100&id=rgCIVaH3hOXV&format=png&color=000000" alt="MMA" class="btn-icon"> MMA
+        </button>
+        <button class="sport-btn" onclick="showSportImage('vollei')">
+            <img src="https://img.icons8.com/ios-filled/50/000000/volleyball.png" alt="Vôlei" class="btn-icon"> Vôlei
+        </button>
     </div>
 </div>
+
+
 
 <!-- Container da Imagem do Esporte -->
 <div id="sport-image" class="sport-image" style="display:none;">

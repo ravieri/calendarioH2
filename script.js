@@ -47,3 +47,45 @@ window.onload = function() {
         document.querySelector(`[onclick="openSubTab(event, '${savedSubTab}')"]`).classList.add('sub-tab-active');
     }
 };
+// Aplica animação de fade-in à lista de esportes quando uma data é selecionada
+document.getElementById('date').addEventListener('change', () => {
+    const sportsSection = document.getElementById('sports');
+    sportsSection.classList.add('fade-in');
+    sportsSection.style.display = 'block'; // Certifica que a seção está visível
+});
+
+// Aplica fade-in ao contêiner de imagem ao clicar em um esporte
+document.querySelectorAll('.sport-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const sportImage = document.getElementById('sport-image');
+        sportImage.classList.add('fade-in');
+        sportImage.style.display = 'block'; // Certifica que o contêiner de imagem está visível
+    });
+});
+// Adiciona classe 'active' ao botão clicado e remove dos outros
+document.querySelectorAll('.sport-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove a classe 'active' de todos os botões
+        document.querySelectorAll('.sport-btn').forEach(b => b.classList.remove('active'));
+        // Adiciona a classe 'active' apenas ao botão clicado
+        btn.classList.add('active');
+    });
+}); 
+
+function showSportImage(sport) {
+    const imgContainer = document.getElementById('sport-img-container');
+    imgContainer.innerHTML = '<div class="loading-spinner"></div>';
+
+    // Depois, substitua o conteúdo com a imagem carregada.
+    const img = new Image();
+    img.src = 'path_to_your_image.jpg'; // Defina o caminho correto
+    img.onload = () => {
+        imgContainer.innerHTML = ''; // Limpa o loading
+        imgContainer.appendChild(img);
+    };
+}
+function openTab(evt, tabName) {
+    const tabContent = document.getElementById(tabName);
+    tabContent.classList.add('active');
+    // Remova a classe active dos outros conteúdos
+}
