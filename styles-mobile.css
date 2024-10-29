@@ -1,81 +1,209 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a2e;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos em Destaque</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
 
-.header-logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 60px;
-}
-header {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .header-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 60px;
+        }
 
-.header-title {
-    font-size: 20px;
-    margin-top: 10px;
-}
+        header {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Estilos para o seletor de datas */
-.month-selector-container {
-    margin: 15px 0;
-    display: flex;
-    flex-direction: column; /* Coloca o seletor abaixo do texto no mobile */
-    align-items: center;
-}
+        .header-title {
+            font-size: 20px;
+            margin-top: 10px;
+        }
 
-.custom-month-selector {
-    padding: 10px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #6a0dad;
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-    margin-top: 10px;
-    width: 90%;
-}
+        /* Estilos para o seletor de datas */
+        .month-selector-container {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/* Estilos para os botões de esportes */
-.sports-buttons {
-    gap: 10px;
-    margin: 10px 0;
-}
-.custom-month-selector {
-    width: 95%;
-    padding: 12px;
-    text-align: center;
-}
+        .custom-month-selector {
+            padding: 10px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #6a0dad;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 90%;
+        }
 
-.sport-btn {
-    background-color: #3b3b5e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    margin: 5px 0;
-    width: 90%;
-    cursor: pointer;
-}
+        /* Estilos para os botões de esportes */
+        .sports-buttons {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            scroll-snap-type: x mandatory;
+        }
 
-.sport-btn:hover {
-    background-color: #494973;
-}
+        .sport-btn {
+            background-color: #3b3b5e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px 0;
+            white-space: nowrap;
+            cursor: pointer;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+        }
 
-/* Estilos para a imagem do esporte */
-.sport-image {
-    text-align: center;
-    margin-top: 20px;
-}
+        .sport-btn:hover {
+            background-color: #494973;
+        }
 
-.sport-image img {
-    max-width: 90%;
-    border-radius: 8px;
-}
+        /* Estilos para a imagem do esporte */
+        .sport-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sport-image img {
+            max-width: 90%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="h2bet_logo.png" alt="H2BET" class="header-logo"> 
+    <div class="header-title">
+        <span class="highlight-link" onclick="location.href='events.html'">Ligas em Destaque</span>
+    </div>
+</header>
+
+<h1>Jogos em Destaque</h1>
+
+<!-- Seletor de Intervalo de Datas -->
+<div class="month-selector-container">
+    <label for="date">Selecionar intervalo de datas:</label>
+    <select id="date" class="custom-month-selector" onchange="showSports()">
+        <option value="1">11/10/2024 - 18/10/2024</option>
+        <option value="2">19/10/2024 - 25/10/2024</option>
+        <option value="3">26/10/2024 - 01/11/2024</option>
+        <option value="4">02/11/2024 - 08/11/2024</option>
+        <option value="5">09/11/2024 - 15/11/2024</option>
+        <option value="6">16/11/2024 - 22/11/2024</option>
+    </select>
+</div>
+
+<!-- Container dos Esportes com scroll horizontal no mobile -->
+<div id="sports" class="sports" style="display:none;">
+    <h2 class="sports-title">ESPORTES DISPONÍVEIS:</h2>
+    <div class="sports-buttons">
+        <button class="sport-btn" onclick="showSportImage('futebol')">
+            <img src="https://img.icons8.com/?size=100&id=59&format=png&color=000000" alt="Futebol" class="btn-icon"> Futebol
+        </button>
+        <button class="sport-btn" onclick="showSportImage('tennis')">
+            <img src="https://img.icons8.com/ios-filled/50/000000/tennis.png" alt="Tênis" class="btn-icon"> Tênis
+        </button>
+        <button class="sport-btn" onclick="showSportImage('basquete')">
+            <img src="https://img.icons8.com/ios-filled/50/000000/basketball.png" alt="Basquete" class="btn-icon"> Basquete
+        </button>
+        <button class="sport-btn" onclick="showSportImage('cs')">
+            <img src="https://img.icons8.com/?size=100&id=jzahITKncvRL&format=png&color=000000" alt="CS 2.0" class="btn-icon"> CS 2.0
+        </button>
+        <button class="sport-btn" onclick="showSportImage('mma')">
+            <img src="https://img.icons8.com/?size=100&id=rgCIVaH3hOXV&format=png&color=000000" alt="MMA" class="btn-icon"> MMA
+        </button>
+        <button class="sport-btn" onclick="showSportImage('vollei')">
+            <img src="https://img.icons8.com/ios-filled/50/000000/volleyball.png" alt="Vôlei" class="btn-icon"> Vôlei
+        </button>
+    </div>
+</div>
+
+<!-- Container da Imagem do Esporte -->
+<div id="sport-image" class="sport-image" style="display:none;">
+    <h2>Imagem do Esporte:</h2>
+    <div id="sport-img-container">
+        <!-- As imagens dos esportes serão adicionadas aqui dinamicamente -->
+    </div>
+</div>
+
+<script>
+    function showSports() {
+        document.getElementById('sports').style.display = 'block';
+        document.getElementById('sport-image').style.display = 'none';
+    }
+
+    function showSportImage(sport) {
+        const date = document.getElementById('date').value;
+        const imgContainer = document.getElementById('sport-img-container');
+        imgContainer.innerHTML = '';
+
+        const sportImages = {
+            'futebol': {
+                '1': ['Brasil18-10.png', 'internacional18-10.png'],
+                '2': ['Brasil19-25.png', 'internacional19-25.png'],
+                '3': ['Brasil26-01.png', 'internacional26-10.png']
+            },
+            'tennis': {
+                '1': 'tennis18-10.png',
+                '2': 'tennis19-25.png',
+                '3': 'tennis26-01.png'
+            },
+            'basquete': {
+                '1': 'basquete18-10.png',
+                '2': 'basquete19-25.png',
+                '3': 'basquete26-01.png'
+            },
+            'cs': {
+                '1': 'cs18-10.png',
+                '2': 'cs19-25.png',
+                '3': 'cs26-01.png'
+            },
+            'mma': {
+                '1': 'mma18-10.png',
+                '2': 'mma19-25.png',
+                '3': 'mma26-01.png'
+            },
+            'vollei': {
+                '1': 'vollei18-10.png',
+                '2': 'vollei19-25.png',
+                '3': 'vollei26-01.png'
+            }
+        };
+
+        if (sportImages[sport] && sportImages[sport][date]) {
+            const images = sportImages[sport][date];
+            images.forEach(imgSrc => {
+                imgContainer.innerHTML += `<img src="${imgSrc}" alt="${sport} image" style="width: 100%; max-width: 1000px;">`;
+            });
+            document.getElementById('sport-image').style.display = 'block';
+        } else {
+            imgContainer.innerHTML = `<p>Imagens não disponíveis para este esporte e data.</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
