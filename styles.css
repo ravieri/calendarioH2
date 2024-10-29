@@ -285,3 +285,113 @@ header {
     0% { box-shadow: 0 0 10px rgba(106, 13, 173, 0.3), 0 0 15px rgba(106, 13, 173, 0.2); }
     100% { box-shadow: 0 0 15px rgba(106, 13, 173, 0.6), 0 0 25px rgba(106, 13, 173, 0.4); }
 }
+
+#sport-img-container img {
+    transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+}
+
+#sport-img-container img:hover {
+    transform: scale(1.25); /* Aumenta levemente o zoom ao passar o mouse */
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ab4cf0;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #494973;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.sport-btn {
+    background: linear-gradient(135deg, #6a0dad, #3b3b5e);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    margin: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sport-btn:hover {
+    background: linear-gradient(135deg, #9b5ed4, #4d4d7e);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.sport-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* Fundo animado com gradiente */
+body {
+    background: linear-gradient(135deg, #22011c, #9805a5c4);
+    background-size: 400% 400%;
+    animation: backgroundMove 10s infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Fundo com várias linhas de texto animado */
+.animated-text-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr); /* Cria 6 linhas de H2 */
+    opacity: 0.1; /* Ajusta a opacidade para um fundo visível, mas não muito forte */
+    pointer-events: none;
+}
+
+/* Cada linha de texto H2 animada */
+.animated-text-background div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 120px;
+    color: #ffffff;
+    animation: moveText 20s linear infinite;
+}
+
+/* Pequenos atrasos para cada linha, criando um efeito escalonado */
+.animated-text-background div:nth-child(odd) {
+    animation-delay: 0s;
+}
+
+.animated-text-background div:nth-child(even) {
+    animation-delay: 10s;
+}
+
+/* Animação do movimento do texto */
+@keyframes moveText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Centralizar o contêiner de esportes */
+.sports {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo para o título */
+.sports-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #9b5ed4;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
