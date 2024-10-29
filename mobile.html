@@ -21,11 +21,11 @@
 
         .sport-btn:hover {
             background-color: #9a4cdd;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efeito de profundidade */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .sport-btn:active {
-            transform: scale(0.98); /* Efeito de clique */
+            transform: scale(0.98);
             background-color: #7e41c4;
         }
 
@@ -40,6 +40,22 @@
 
         .sport-image img.loaded {
             opacity: 1;
+        }
+
+        /* Configuração para deslizar os botões de esportes no mobile */
+        .sports-buttons {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; /* Suaviza o deslizamento em iOS */
+        }
+
+        .sport-btn {
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -64,7 +80,7 @@
     </select>
 </div>
 
-<!-- Container dos Esportes -->
+<!-- Container dos Esportes com scroll horizontal no mobile -->
 <div id="sports" class="sports" style="display:none;">
     <h2>Esportes Disponíveis:</h2>
     <div class="sports-buttons">
@@ -108,28 +124,38 @@
                 '1': 'tennis18-10.png',
                 '2': 'tennis19-25.png',
                 '3': 'manu.webp'
+            },
+            'basquete': {
+                '1': 'basquete18-10.png',
+                '2': 'basquete19-25.png',
+                '3': 'manu.webp'
+            },
+            'cs': {
+                '1': 'cs18-10.png',
+                '2': 'cs19-25.png',
+                '3': 'manu.webp'
+            },
+            'mma': {
+                '1': 'mma18-10.png',
+                '2': 'mma19-25.png',
+                '3': 'manu.webp'
+            },
+            'vollei': {
+                '1': 'vollei18-10.png',
+                '2': 'vollei19-25.png',
+                '3': 'manu.webp'
             }
         };
 
-        if (sport === 'futebol') {
-            const brasilImg = sportImages[sport][date][0];
-            const internacionalImg = sportImages[sport][date][1];
-            imgContainer.innerHTML += `<h3>Brasil</h3><img src="${brasilImg}" alt="Brasil" style="width: 100%; max-width: 600px;">`;
-            imgContainer.innerHTML += `<h3>Internacional</h3><img src="${internacionalImg}" alt="Internacional" style="width: 100%; max-width: 600px;">`;
-        } else {
-            const img = sportImages[sport][date];
-            imgContainer.innerHTML = `<img src="${img}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
-        }
-
-        document.getElementById('sport-image').style.display = 'block';
-
-        // Adiciona classe 'loaded' quando a imagem é carregada
-        const images = imgContainer.querySelectorAll('img');
-        images.forEach(image => {
-            image.addEventListener('load', () => {
-                image.classList.add('loaded');
+        if (sportImages[sport] && sportImages[sport][date]) {
+            const images = sportImages[sport][date];
+            images.forEach(imgSrc => {
+                imgContainer.innerHTML += `<img src="${imgSrc}" alt="${sport}" style="width: 100%; max-width: 600px;">`;
             });
-        });
+            document.getElementById('sport-image').style.display = 'block';
+        } else {
+            imgContainer.innerHTML = `<p>Imagens não disponíveis para este esporte e data.</p>`;
+        }
     }
 </script>
 
