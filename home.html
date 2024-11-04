@@ -45,6 +45,7 @@
             background-color: #1a1a2e;
             color: #ffffff;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 1s ease; /* Transição suave para a cor de fundo */
         }
 
         .carousel-slide {
@@ -101,6 +102,24 @@
             margin-top: 20px;
         }
 
+        .custom-month-selector {
+            padding: 10px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #6a0dad;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 250px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-month-selector:hover {
+            background-color: #9a4cdd;
+        }
+
+        /* Botões de esportes */
         .sport-btn {
             background: linear-gradient(135deg, #6a0dad, #494973);
             color: white;
@@ -108,6 +127,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             margin: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
         }
 
         .sport-btn:hover {
@@ -120,7 +141,7 @@
             background-color: #7e41c4;
         }
 
-        /* Estilos para a tabela de jogos */
+        /* Área da imagem com borda */
         .sport-image {
             border-radius: 10px;
             padding: 15px;
@@ -151,7 +172,7 @@
 <h1>Jogos em Destaque</h1>
 
 <!-- Carrossel de Jogos em Destaque -->
-<div class="carousel-container">
+<div class="carousel-container" id="carousel-container">
     <div class="carousel-slide" id="carousel-slide">
         <div class="carousel-item">
             <h3>
@@ -268,10 +289,14 @@
     let currentIndex = 0;
     const carouselSlide = document.getElementById('carousel-slide');
     const carouselItems = document.querySelectorAll('.carousel-item');
+    const carouselContainer = document.getElementById('carousel-container');
+
+    const colors = ['#1a1a2e', '#282846', '#6a0dad', '#494973', '#1a1a2e']; // Cores para o carrossel
 
     function updateCarousel() {
         const slideWidth = carouselItems[0].clientWidth;
         carouselSlide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        carouselContainer.style.backgroundColor = colors[currentIndex % colors.length]; // Altera a cor de fundo
     }
 
     function nextSlide() {
@@ -344,7 +369,6 @@
                 '4': ['infelizmente.png'],
                 '5': ['manu.webp'],
                 '6': ['manu.webp']
-                
             }
         };
 
