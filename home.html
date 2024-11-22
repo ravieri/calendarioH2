@@ -268,11 +268,12 @@
         document.getElementById('sport-image').style.display = 'none';
     }
 
-    function showSportImage(sport) {
+       function showSportImage(sport) {
         const date = document.getElementById('date').value;
         const imgContainer = document.getElementById('sport-img-container');
-        imgContainer.innerHTML = '';
+        imgContainer.innerHTML = ''; // Limpa o container de imagens
 
+        // Mapear imagens para cada esporte e data
         const sportImages = {
             'futebol': {
                 '1': ['Brasil18-10.png', 'internacional18-10.png'],
@@ -280,7 +281,8 @@
                 '3': ['Brasil26-01.png', 'internacional26-10.png'],
                 '4': ['Brasilnovo.jpg', 'internacional02-11.png'],
                 '5': ['Brasil09-11.png', 'internacional09-15.png'],
-                '6': ['Brasilnovembro16-22.png', 'internacionalnovembro16-22.png']
+                '6': ['Brasilnovembro16-22.png', 'internacionalnovembro16-22.png'],
+                '7': ['Brasilnovembro23.png', 'internacionalnovembro23.png'] // Adicionado intervalo 7
             },
             'tennis': {
                 '1': ['tennis18-10.png'],
@@ -288,7 +290,8 @@
                 '3': ['tennis26-01.png'],
                 '4': ['tennisNOV02.png'],
                 '5': ['tennis09-15.png'],
-                '6': ['tennisNOVEMBRO16-25.png']
+                '6': ['tennisNOVEMBRO16-25.png'],
+                '7': ['tennis23-29.png'] // Adicionado intervalo 7
             },
             'basquete': {
                 '1': ['basquete18-10.png'],
@@ -296,7 +299,8 @@
                 '3': ['basquete26-01.png'],
                 '4': ['basquete02-08.png'],
                 '5': ['basquete09-15.png'],
-                '6': ['basquetenovembro16-22.png']
+                '6': ['basquetenovembro16-22.png'],
+                '7': ['basquete23-29.png'] // Adicionado intervalo 7
             },
             'cs': {
                 '1': ['cs18-10.png'],
@@ -304,7 +308,8 @@
                 '3': ['cs26-01.png'],
                 '4': ['infelizmente.png'],
                 '5': ['manu.webp'],
-                '6': ['manu.webp']
+                '6': ['manu.webp'],
+                '7': ['cs23-29.png'] // Adicionado intervalo 7
             },
             'mma': {
                 '1': ['mma18-10.png'],
@@ -312,7 +317,8 @@
                 '3': ['mma26-01.png'],
                 '4': ['mma02-8.png'],
                 '5': ['mma09-15.png'],
-                '6': ['mmanovembro16-22.png']
+                '6': ['mmanovembro16-22.png'],
+                '7': ['mmanovembro23.png'] // Adicionado intervalo 7
             },
             'vollei': {
                 '1': ['vollei18-10.png'],
@@ -320,21 +326,24 @@
                 '3': ['vollei26-01.png'],
                 '4': ['infelizmente.png'],
                 '5': ['infelizmente.png'],
-                '6': ['manu.webp']
+                '6': ['manu.webp'],
+                '7': ['vollei23-29.png'] // Adicionado intervalo 7
             }
         };
 
+        // Verifica se há imagens para o esporte e data selecionados
         if (sportImages[sport] && sportImages[sport][date]) {
             const images = sportImages[sport][date];
             images.forEach(imgSrc => {
                 imgContainer.innerHTML += `<img src="${imgSrc}" alt="${sport} image" style="width: 100%; max-width: 1000px;">`;
             });
-            document.getElementById('sport-image').style.display = 'block';
+            document.getElementById('sport-image').style.display = 'block'; // Exibe a seção de imagens
         } else {
             imgContainer.innerHTML = `<p>Imagens não disponíveis para este esporte e data.</p>`;
         }
     }
 </script>
+
 
 </body>
 </html>
