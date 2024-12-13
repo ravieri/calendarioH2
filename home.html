@@ -233,13 +233,13 @@
 <div class="month-selector-container">
     <label for="date">Selecionar intervalo de datas:</label>
     <select id="date" class="custom-month-selector" onchange="showSports()">
-        <option value="1">26/10/2024 - 01/11/2024</option>
-        <option value="2">02/11/2024 - 08/11/2024</option>
-        <option value="3">09/11/2024 - 15/11/2024</option>
-        <option value="4">16/11/2024 - 22/11/2024</option>
-        <option value="5">23/11/2024 - 29/11/2024</option>
-        <option value="6">30/11/2024 - 06/12/2024</option>
-        <option value="7">07/12/2024 - 13/12/2024</option>
+        <option value="1">02/11/2024 - 08/11/2024</option>
+        <option value="2">09/11/2024 - 15/11/2024</option>
+        <option value="3">16/11/2024 - 22/11/2024</option>
+        <option value="4">23/11/2024 - 29/11/2024</option>
+        <option value="5">30/11/2024 - 06/12/2024</option>
+        <option value="6">07/12/2024 - 13/12/2024</option>
+        <option value="7">14/12/2024 - 20/12/2024</option>
     </select>
 </div>
 
@@ -312,49 +312,49 @@
         // Mapear imagens para cada esporte e data
         const sportImages = {
             'futebol': {
-                '1': ['Brasil26-01.png', 'internacional26-10.png'],
-                '2': ['Brasilnovo.jpg', 'internacional02-11.png'],
-                '3': ['Brasil09-11.png', 'internacional09-15.png'],
-                '4': ['Brasilnovembro16-22.png', 'internacionalnovembro16-22.png'],
-                '5': ['Brasilnovembro23.png', 'internacionalnovembro23.png'],
-                '6': ['Brasilnovembro30.png','internacionalnovembro30.png'],
-                '7': ['Brasildezembro.png', 'internacionaldezembro.png'] // Adicionado intervalo 7
+                '1': ['Brasilnovo.jpg', 'internacional02-11.png'],
+                '2': ['Brasil09-11.png', 'internacional09-15.png'],
+                '3': ['Brasilnovembro16-22.png', 'internacionalnovembro16-22.png'],
+                '4': ['Brasilnovembro23.png', 'internacionalnovembro23.png'],
+                '5': ['Brasilnovembro30.png','internacionalnovembro30.png'],
+                '6': ['Brasildezembro.png', 'internacionaldezembro.png'],
+                '7': [] // Adicionado intervalo 7
             },
             'tennis': {
-                '1': ['tennis26-01.png'],
-                '2': ['tennisNOV02.png'],
-                '3': ['tennis09-15.png'],
-                '4': ['tennisNOVEMBRO16-25.png'],
-                '5': ['tennisNOVEMBRO23.png'],
+                '1': ['tennisNOV02.png'],
+                '2': ['tennis09-15.png'],
+                '3': ['tennisNOVEMBRO16-25.png'],
+                '4': ['tennisNOVEMBRO23.png'],
+                '5': ['manu.webp'],
                 '6': ['manu.webp'],
-                '7': ['manu.webp'] // Adicionado intervalo 7
+                '7': [] // Adicionado intervalo 7
             },
             'basquete': {
-                '1': ['basquete26-01.png'],
-                '2': ['basquete02-08.png'],
-                '3': ['basquete09-15.png'],
-                '4': ['basquetenovembro16-22.png'],
-                '5': ['basquetenovembro23.png'],
-                '6': ['basquetenovembro30.png'],
-                '7': ['basquetedezembro.png'] // Adicionado intervalo 7
+                '1': ['basquete02-08.png'],
+                '2': ['basquete09-15.png'],
+                '3': ['basquetenovembro16-22.png'],
+                '4': ['basquetenovembro23.png'],
+                '5': ['basquetenovembro30.png'],
+                '6': ['basquetedezembro.png'],
+                '7': [] // Adicionado intervalo 7
             },
             'cs': {
-                '1': ['cs26-01.png'],
-                '2': ['infelizmente.png'],
+                '1': ['infelizmente.png'],
+                '2': ['manu.webp'],
                 '3': ['manu.webp'],
-                '4': ['manu.webp'],
-                '5': ['infelizmente.png'],
-                '6': ['csnovembro30.png'],
-                '7': ['csdezembrio.png'] // Adicionado intervalo 7
+                '4': ['infelizmente.png'],
+                '5': ['csnovembro30.png'],
+                '6': ['csdezembrio.png'],
+                '7': [] // Adicionado intervalo 7
             },
             'mma': {
-                '1': ['mma26-01.png'],
-                '2': ['mma02-8.png'],
-                '3': ['mma09-15.png'],
-                '4': ['mmanovembro16-22.png'],
-                '5': ['mmanovembro23.png'],
-                '6': ['infelizmente.png'],
-                '7': ['mmadezembro.png'] // Adicionado intervalo 7
+                '1': ['mma02-8.png'],
+                '2': ['mma09-15.png'],
+                '3': ['mmanovembro16-22.png'],
+                '4': ['mmanovembro23.png'],
+                '5': ['infelizmente.png'],
+                '6': ['mmadezembro.png'],
+                '7': [] // Adicionado intervalo 7
             },
             'vollei': {
                 '1': ['vollei26-01.png'],
