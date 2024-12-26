@@ -173,60 +173,9 @@
         </style>
     </head>
     <body>
-        <canvas id="snowCanvas"></canvas>
-        <script>
-            const canvas = document.getElementById('snowCanvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+        
     
-            const snowflakes = [];
-    
-            function createSnowflake() {
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height;
-                const radius = Math.random() * 4 + 1;
-                const speed = Math.random() * 3 + 1;
-    
-                snowflakes.push({ x, y, radius, speed });
-            }
-    
-            function drawSnowflake(snowflake) {
-                ctx.beginPath();
-                ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'white';
-                ctx.fill();
-            }
-    
-            function updateSnowflake(snowflake) {
-                snowflake.y += snowflake.speed;
-                if (snowflake.y > canvas.height) {
-                    snowflake.y = -snowflake.radius;
-                    snowflake.x = Math.random() * canvas.width;
-                }
-            }
-    
-            function animateSnow() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                snowflakes.forEach((snowflake) => {
-                    updateSnowflake(snowflake);
-                    drawSnowflake(snowflake);
-                });
-                requestAnimationFrame(animateSnow);
-            }
-    
-            // Inicializa os flocos de neve
-            for (let i = 0; i < 100; i++) {
-                createSnowflake();
-            }
-    
-            animateSnow();
-    
-            // Atualiza o canvas quando a janela for redimensionada
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
+           
         </script>
     <header>
         <img src="h2bet_logo.png" alt="H2BET" class="header-logo"> 
