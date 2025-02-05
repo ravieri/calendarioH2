@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
@@ -6,418 +6,124 @@
         <title>Jogos em Destaque</title>
         <link rel="icon" href="favicon.jpg" type="image/x-icon"> <!-- Linha do favicon adicionada -->
         <link rel="stylesheet" href="styles.css">
-        
-        <style>
-            /* Estilos gerais */
-            body, html {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-                background-color: #1a1a2e;
-                font-family: 'Arial', sans-serif;
-                color: #ffffff;
-            }
-
-            header {
-                background-color: #0d0d21;
-                padding: 20px;
-                text-align: center;
-                border-bottom: 2px solid #494973;
-                position: relative;
-            }
-
-            .header-logo {
-                width: 80px;
-            }
-
-            h1 {
-                color: white;
-                font-size: 36px;
-                text-align: center;
-                margin-top: 20px;
-            }
-
-            /* Carrossel de Destaque */
-            .carousel-container {
-                position: relative;
-                max-width: 500px;
-                margin: 30px auto;
-                overflow: hidden;
-                border-radius: 8px;
-                background-color: #1a1a2e;
-                color: #ffffff;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-                transition: background-color 1s ease; /* Transição suave para a cor de fundo */
-            }
-
-            .carousel-slide {
-                display: flex;
-                transition: transform 0.5s ease-in-out;
-            }
-
-            .carousel-item {
-                min-width: 100%;
-                box-sizing: border-box;
-                padding: 20px;
-                text-align: center;
-            }
-
-            .carousel-item h3 {
-                font-size: 20px;
-                color: #ffdd57;
-            }
-
-            /* Ajuste do tamanho dos ícones */
-            .carousel-item h3 img {
-                width: 32px; /* Reduz o tamanho para 32px */
-                height: 32px;
-            }
-
-            /* Botões de navegação */
-            .carousel-button {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: rgba(0, 0, 0, 0.5);
-                color: #ffffff;
-                border: none;
-                padding: 10px;
-                cursor: pointer;
-                font-size: 18px;
-                border-radius: 50%;
-            }
-
-            .carousel-button.left {
-                left: 10px;
-            }
-
-            .carousel-button.right {
-                right: 10px;
-            }
-
-            /* Estilos para o seletor de datas e esportes */
-            .month-selector-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                margin-top: 20px;
-            }
-
-            .custom-month-selector {
-                padding: 10px;
-                font-size: 16px;
-                color: #ffffff;
-                background-color: #6a0dad;
-                border: 2px solid #ffffff;
-                border-radius: 5px;
-                margin-top: 10px;
-                width: 250px;
-                text-align: center;
-                transition: background-color 0.3s ease;
-            }
-
-            .custom-month-selector:hover {
-                background-color: #9a4cdd;
-            }
-
-            /* Botões de esportes */
-            .sport-btn {
-                background: linear-gradient(135deg, #6a0dad, #494973);
-                color: white;
-                padding: 15px 25px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                margin: 5px;
-                cursor: pointer;
-                transition: background 0.3s, transform 0.2s;
-            }
-
-            .sport-btn:hover {
-                background: linear-gradient(135deg, #9a4cdd, #6161a2);
-                transform: scale(1.1);
-            }
-
-            .sport-btn:active {
-                transform: scale(0.98);
-                background-color: #7e41c4;
-            }
-
-            /* Área da imagem com borda */
-            .sport-image {
-                border-radius: 10px;
-                padding: 15px;
-                background-color: #282846;
-                margin: 20px auto;
-                text-align: center;
-                max-width: 1000px;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-            }
-
-            .sport-image img {
-                border-radius: 8px;
-                border: 2px solid #494973;
-                max-width: 100%;
-                height: auto;
-            }
-            /* Estilo do canvas de neve */
-        #snowCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;}
-            
-        </style>
-    </head>
+       
+        </head>
     <body>
-        
+        <header>
+            <img src="h2bet_logo.png" alt="H2BET" class="header-logo"> 
+            <div class="header-title">
+                <span class="highlight-link" onclick="location.href='events.html'">Ligas em Destaque</span>
+            </div>
+        </header>
+        <h1>Jogos em Destaque</h1>
+
+        <!-- Carrossel de Jogos em Destaque -->
+        <div class="carousel-container" id="carousel-container">
+            <div class="carousel-slide" id="carousel-slide">
+                <!-- Jogo 1 -->
+                <div class="carousel-item">
+                    <h3>
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG 
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/xE2RajzsCEoen1wz8g8rhg_48x48.png"> América-MG
+                    </h3>
+                    <p>Data: 29/01/2025</p>
+                    <p>Horário: 22:00</p>
+                    <p>Local: Brasil</p>
+                    <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 4 de 8</p>
+                </div>
+                <!-- Jogo 2 -->
+                <div class="carousel-item">
+                    <h3>
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/NfqMCtUSzNRMpkxduxYC7Q_48x48.png"> Villa Nova 
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG
+                    </h3>
+                    <p>Data: 01/02/2025</p>
+                    <p>Horário: 16:30</p>
+                    <p>Local: Brasil</p>
+                    <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 5 de 8</p>
+                </div>
+                <!-- Jogo 3 -->
+                <div class="carousel-item">
+                    <h3>
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG 
+                        <img src=""> Athletic
+                    </h3>
+                    <p>Data: 06/02/2025</p>
+                    <p>Horário: 19:45</p>
+                    <p>Local: Brasil</p>
+                    <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 6 de 8</p>
+                </div>
+                <!-- Jogo 4 -->
+                <div class="carousel-item">
+                    <h3>
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/Tcv9X__nIh-6wFNJPMwIXQ_48x48.png"> Cruzeiro 
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG
+                    </h3>
+                    <p>Data: 09/02/2025</p>
+                    <p>Horário: 16:00</p>
+                    <p>Local: Brasil</p>
+                    <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 7 de 8</p>
+                </div>
+                <!-- Jogo 5 -->
+                <div class="carousel-item">
+                    <h3>
+                        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG 
+                        <img src="https://www.gstatic.com/onebox/sports/logos/crest_48dp.png"> Itabirito
+                    </h3>
+                    <p>Data: 12/02/2025</p>
+                    <p>Horário: 19:00</p>
+                    <p>Local: Brasil</p>
+                    <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 8 de 8</p>
+                </div>
+            </div>
+            <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
+        </div>
+        </div>
     
-           
-        </script>
-    <header>
-        <img src="h2bet_logo.png" alt="H2BET" class="header-logo"> 
-        <div class="header-title">
-            <span class="highlight-link" onclick="location.href='events.html'">Ligas em Destaque</span>
+        <!-- Seletor de Intervalo de Datas -->
+        <div class="month-selector-container">
+            <label for="date">Selecionar intervalo de datas:</label>
+            <select id="date" class="custom-month-selector" onchange="showSports()">
+                <option value="1">28/12/2024 - 03/01/2025</option>
+                <option value="2">04/01/2025 - 10/01/2025</option>
+                <option value="3">11/01/2025 - 17/01/2025</option>
+                <option value="4">18/01/2025 - 24/01/2025</option>
+                <option value="5">25/01/2025 - 31/01/2025</option>
+                <option value="6">01/02/2025 - 07/02/2025</option>
+                <option value="7">08/02/2025 - 14/02/2025</option>
+            </select>
         </div>
-    </header>
-
-    <h1>Jogos em Destaque</h1>
-
-    <!-- Carrossel de Jogos em Destaque -->
-    <div class="carousel-container" id="carousel-container">
-        <div class="carousel-slide" id="carousel-slide">
-            <!-- Jogo 1 -->
-            <div class="carousel-item">
-                <h3>
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG 
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/xE2RajzsCEoen1wz8g8rhg_48x48.png"> América-MG
-                </h3>
-                <p>Data: 29/01/2025</p>
-                <p>Horário: 22:00</p>
-                <p>Local: Brasil</p>
-                <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 4 de 8</p>
-            </div>
-            <!-- Jogo 2 -->
-            <div class="carousel-item">
-                <h3>
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/NfqMCtUSzNRMpkxduxYC7Q_48x48.png"> Villa Nova 
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG
-                </h3>
-                <p>Data: 01/02/2025</p>
-                <p>Horário: 16:30</p>
-                <p>Local: Brasil</p>
-                <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 5 de 8</p>
-            </div>
-            <!-- Jogo 3 -->
-            <div class="carousel-item">
-                <h3>
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG 
-                    <img src=""> Athletic
-                </h3>
-                <p>Data: 06/02/2025</p>
-                <p>Horário: 19:45</p>
-                <p>Local: Brasil</p>
-                <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 6 de 8</p>
-            </div>
-            <!-- Jogo 4 -->
-            <div class="carousel-item">
-                <h3>
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/Tcv9X__nIh-6wFNJPMwIXQ_48x48.png"> Cruzeiro 
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG
-                </h3>
-                <p>Data: 09/02/2025</p>
-                <p>Horário: 16:00</p>
-                <p>Local: Brasil</p>
-                <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 7 de 8</p>
-            </div>
-            <!-- Jogo 5 -->
-            <div class="carousel-item">
-                <h3>
-                    <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"> Atlético-MG 
-                    <img src="https://www.gstatic.com/onebox/sports/logos/crest_48dp.png"> Itabirito
-                </h3>
-                <p>Data: 12/02/2025</p>
-                <p>Horário: 19:00</p>
-                <p>Local: Brasil</p>
-                <p>Descrição: Campeonato Mineiro - Primeira fase - Jornada 8 de 8</p>
+    
+        <!-- Container dos Esportes -->
+        <div id="sports" class="sports" style="display:none;">
+            <h2 class="sports-title">ESPORTES DISPONÍVEIS:</h2>
+            <div class="sports-buttons">
+                <button class="sport-btn" onclick="showSportImage('futebol')">
+                    <img src="https://img.icons8.com/?size=100&id=59&format=png&color=000000" alt="Futebol" class="btn-icon"> Futebol
+                </button>
+                <button class="sport-btn" onclick="showSportImage('tennis')">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/tennis.png" alt="Tênis" class="btn-icon"> Tênis
+                </button>
+                <button class="sport-btn" onclick="showSportImage('basquete')">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/basketball.png" alt="Basquete" class="btn-icon"> Basquete
+                </button>
+                <button class="sport-btn" onclick="showSportImage('cs')">
+                    <img src="https://img.icons8.com/?size=100&id=jzahITKncvRL&format=png&color=000000" alt="CS 2.0" class="btn-icon"> CS 2.0
+                </button>
+                <button class="sport-btn" onclick="showSportImage('mma')">
+                    <img src="https://img.icons8.com/?size=100&id=rgCIVaH3hOXV&format=png&color=000000" alt="MMA" class="btn-icon"> MMA
+                </button>
             </div>
         </div>
-        <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
-        <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
-    </div>
-    </div>
-
-    <!-- Seletor de Intervalo de Datas -->
-    <div class="month-selector-container">
-        <label for="date">Selecionar intervalo de datas:</label>
-        <select id="date" class="custom-month-selector" onchange="showSports()">
-            <option value="1">28/12/2024 - 03/01/2025</option>
-            <option value="2">04/01/2025 - 10/01/2025</option>
-            <option value="3">11/01/2025 - 17/01/2025</option>
-            <option value="4">18/01/2025 - 24/01/2025</option>
-            <option value="5">25/01/2025 - 31/01/2025</option>
-            <option value="6">01/02/2025 - 07/02/2025</option>
-            <option value="7">08/02/2025 - 14/02/2025</option>
-        </select>
-    </div>
-
-    <!-- Container dos Esportes -->
-    <div id="sports" class="sports" style="display:none;">
-        <h2 class="sports-title">ESPORTES DISPONÍVEIS:</h2>
-        <div class="sports-buttons">
-            <button class="sport-btn" onclick="showSportImage('futebol')">
-                <img src="https://img.icons8.com/?size=100&id=59&format=png&color=000000" alt="Futebol" class="btn-icon"> Futebol
-            </button>
-            <button class="sport-btn" onclick="showSportImage('tennis')">
-                <img src="https://img.icons8.com/ios-filled/50/000000/tennis.png" alt="Tênis" class="btn-icon"> Tênis
-            </button>
-            <button class="sport-btn" onclick="showSportImage('basquete')">
-                <img src="https://img.icons8.com/ios-filled/50/000000/basketball.png" alt="Basquete" class="btn-icon"> Basquete
-            </button>
-            <button class="sport-btn" onclick="showSportImage('cs')">
-                <img src="https://img.icons8.com/?size=100&id=jzahITKncvRL&format=png&color=000000" alt="CS 2.0" class="btn-icon"> CS 2.0
-            </button>
-            <button class="sport-btn" onclick="showSportImage('mma')">
-                <img src="https://img.icons8.com/?size=100&id=rgCIVaH3hOXV&format=png&color=000000" alt="MMA" class="btn-icon"> MMA
-            </button>
+    
+        <!-- Container da Imagem do Esporte -->
+        <div id="sport-image" class="sport-image" style="display:none;">
+            <h2>Imagem do Esporte:</h2>
+            <div id="sport-img-container">
+                <!-- As imagens dos esportes serão adicionadas aqui dinamicamente -->
+            </div>
         </div>
-    </div>
-
-    <!-- Container da Imagem do Esporte -->
-    <div id="sport-image" class="sport-image" style="display:none;">
-        <h2>Imagem do Esporte:</h2>
-        <div id="sport-img-container">
-            <!-- As imagens dos esportes serão adicionadas aqui dinamicamente -->
-        </div>
-    </div>
-
-    <script>
-        let currentIndex = 0;
-        const carouselSlide = document.getElementById('carousel-slide');
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const carouselContainer = document.getElementById('carousel-container');
-
-        const colors = ['#1a1a2e', '#282846', '#6a0dad', '#494973', '#1a1a2e']; // Cores para o carrossel
-
-        function updateCarousel() {
-            const slideWidth = carouselItems[0].clientWidth;
-            carouselSlide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-            carouselContainer.style.backgroundColor = colors[currentIndex % colors.length]; // Altera a cor de fundo
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-            updateCarousel();
-        }
-
-        setInterval(nextSlide, 8000);
-
-        function showSports() {
-            document.getElementById('sports').style.display = 'block';
-            document.getElementById('sport-image').style.display = 'none';
-        }
-
-        function showSportImage(sport) {
-            const date = document.getElementById('date').value;
-            const imgContainer = document.getElementById('sport-img-container');
-            imgContainer.innerHTML = ''; // Limpa o container de imagens
-
-            // Mapear imagens para cada esporte e data
-            const sportImages = {
-                'futebol': {
-                    '1': ['internacionaldezembro4.png'],
-                    '2': ['internacional2025.png'],
-                    '3': ['brasil2025.png','internacional2025-01.png'],
-                    '4': ['brasil2025-2.png', 'internacional2025-02.png'],
-                    '5': ['brasil2025-3.png','internacional2025-03.png'],
-                    '6': ['fotos2025/brasilnovo1.png','fotos2025/INTERNACIONALNOVO1.png'],
-                    '7': []// Adicionado intervalo 7
-                    
-                },
-                'tennis': {
-                    '1': ['tennisdezemrbro3.png'],
-                    '2': ['infelizmente.png'],
-                    '3': ['tennis2025.png'],
-                    '4': ['manu.webp'],
-                    '5': ['manu.webp'],
-                    '6': ['fotos2025/tenisnovo1.png'],
-                    '7': ['manu.webp'],
-                     // Adicionado intervalo 7
-                },
-                'basquete': {
-                    '1': ['basquetedezembro4.png'],
-                    '2': ['basquete2025.png'],
-                    '3': ['basquete2025-01.png'],
-                    '4': ['basquete2025-02.png'],
-                    '5': ['basquete2025-03.png'],
-                    '6': ['fotos2025/basquetenovo1.png'],
-                    '7': ['manu.webp']
-                     // Adicionado intervalo 7
-                },
-                'cs': {
-                    '1': ['csdezembrio2.png'],
-                    '2': ['infelizmente.png'],
-                    '3': ['infelizmente.png'],
-                    '4': ['infelizmente.png'],
-                    '5': ['infelizmente.png'],
-                    '6': ['infelizmente.png'],
-                    '7': ['infelizmente.png'] // Adicionado intervalo 7
-                },
-                'mma': {
-                    '1': ['infelizmente.png'],
-                    '2': ['infelizmente.png'],
-                    '3': ['MMA2025.png'],
-                    '4': ['MMA2025-01.png'],
-                    '5': ['infelizmente.png'],
-                    '6': ['manu.webp'],
-                    '7': ['manu.webp']
-                     // Adicionado intervalo 7
-                },
-                'vollei': {
-                    '1': ['vollei26-01.png'],
-                    '2': ['infelizmente.png'],
-                    '3': ['infelizmente.png'],
-                    '4': ['manu.webp'],
-                    '5': ['vollei23-29.png'],
-                    '6': [],
-                    '7': [] // Adicionado intervalo 7
-                }
-            };
-
-            // Verifica se há imagens para o esporte e data selecionados
-            if (sportImages[sport] && sportImages[sport][date]) {
-                const images = sportImages[sport][date];
-                images.forEach(imgSrc => {
-                    imgContainer.innerHTML += `<img src="${imgSrc}" alt="${sport} image" style="width: 100%; max-width: 1000px;">`;
-                });
-                document.getElementById('sport-image').style.display = 'block'; // Exibe a seção de imagens
-            } else {
-                imgContainer.innerHTML = `<p>Imagens não disponíveis para este esporte e data.</p>`;
-            }
-        }
-    </script>
-
-
+        <script src="script.js"></script>
     </body>
     </html>
-
-
-
-
-
-    
-
-   
-    
-    
-
-
-    

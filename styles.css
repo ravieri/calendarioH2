@@ -1,18 +1,194 @@
+/* Estilos gerais */
+
+.highlight-link {
+    font-size: 20px; /* Define o tamanho da letra */
+    color: #ffdd57; /* Cor do texto */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+.highlight-link:hover {
+    color: #ffd700; /* Cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Aumenta levemente o tamanho ao passar o mouse */
+}
+
+.highlight-link:active {
+    color: #ffa500; /* Cor do texto ao clicar */
+    transform: scale(0.95); /* Reduz levemente o tamanho ao clicar */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparente */
+    padding: 28px;
+    text-align: center;
+    border-bottom: 2px solid #494973;
+    position: fixed; /* Fixo no topo */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+.header-logo {
+    width: 80px;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 80px; /* Ajuste para compensar o header fixo */
+}
+
+/* Carrossel de Destaque */
+.carousel-container {
+    position: relative;
+    max-width: 500px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 1s ease; /* Transição suave para a cor de fundo */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-item h3 {
+    font-size: 20px;
+    color: #ffdd57;
+}
+
+/* Ajuste do tamanho dos ícones */
+.carousel-item h3 img {
+    width: 32px; /* Reduz o tamanho para 32px */
+    height: 32px;
+}
+
+/* Botões de navegação */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
+
+/* Estilos para o seletor de datas e esportes */
+.month-selector-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.custom-month-selector {
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #6a0dad;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 250px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.custom-month-selector:hover {
+    background-color: #9a4cdd;
+}
+
+/* Botões de esportes */
+.sport-btn {
+    background: linear-gradient(135deg, #6a0dad, #494973);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sport-btn:hover {
+    background: linear-gradient(135deg, #9a4cdd, #6161a2);
+    transform: scale(1.1);
+}
+
+.sport-btn:active {
+    transform: scale(0.98);
+    background-color: #7e41c4;
+}
+
+/* Área da imagem com borda */
+.sport-image {
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #282846;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 1000px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.sport-image img {
+    border-radius: 8px;
+    border: 2px solid #494973;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo do canvas de neve */
+#snowCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #1a1a2e; /* Fundo escuro */
     color: #ffffff; /* Texto claro */
-}
-
-header {
-    background-color: #0d0d21;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #494973;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: box-shadow 0.3s ease;
 }
 
 .header-logo:hover {
@@ -28,7 +204,6 @@ header {
 }
 
 /* Estilos para as abas e o conteúdo das abas no calendário */
-
 .tabs-container, .sub-tabs-container {
     background-color: #282846;
     padding: 10px;
@@ -99,6 +274,7 @@ header {
     background-color: #9a4cdd; /* Tom de roxo mais claro no hover */
     color: #ffffff;
 }
+
 .custom-month-selector:focus {
     outline: none;
     border-color: #9a4cdd;
@@ -137,7 +313,6 @@ header {
     align-items: center;
     font-size: 18px;
 }
-
 .custom-date-selector {
     padding: 10px 15px;
     margin-left: 10px;
@@ -177,6 +352,7 @@ header {
     background-color: #494973;
     transform: scale(1.05);
 }
+
 /* Efeito de destaque para o botão ativo */
 .sport-btn.active {
     background-color: #494973;
@@ -234,6 +410,7 @@ header {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
 .tab-content, .sub-tab-content {
     opacity: 0;
     transform: translateY(20px);
@@ -244,6 +421,7 @@ header {
     opacity: 1;
     transform: translateY(0);
 }
+
 .sport-btn {
     display: flex;
     align-items: center;
@@ -268,7 +446,6 @@ header {
     margin-right: 8px;
 }
 
-
 #sport-img-container {
     border: 2px solid #494973;
     border-radius: 8px;
@@ -279,7 +456,6 @@ header {
     max-width: 1250px; /* Aumenta o limite máximo para telas grandes */
     margin: 0 auto; /* Centraliza o contêiner */
 }
-
 
 @keyframes glow {
     0% { box-shadow: 0 0 10px rgba(106, 13, 173, 0.3), 0 0 15px rgba(106, 13, 173, 0.2); }
@@ -305,6 +481,7 @@ h2 {
     display: inline-block;
     padding-bottom: 5px;
 }
+
 .sport-btn {
     background: linear-gradient(135deg, #6a0dad, #3b3b5e);
     color: white;
@@ -321,10 +498,12 @@ h2 {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 .sport-btn:active {
     transform: scale(0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 /* Fundo animado com gradiente */
 body {
     background: linear-gradient(135deg, #22011c, #9805a5c4);
