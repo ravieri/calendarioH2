@@ -38,52 +38,49 @@ function showSportImage(sport) {
   // Mapear imagens para cada esporte e data
   const sportImages = {
     futebol: {
-      1: ["internacionaldezembro4.png"],
-      2: ["internacional2025.png"],
       3: ["brasil2025.png", "internacional2025-01.png"],
       4: ["brasil2025-2.png", "internacional2025-02.png"],
       5: ["brasil2025-3.png", "internacional2025-03.png"],
       6: ["fotos2025/brasilnovo1.png", "fotos2025/INTERNACIONALNOVO1.png"],
-      7: ["fotos2025/brasilnovo3.png", "fotos2025/INTERNACIONALNOVO2.png"], // Adicionado intervalo 7
+      7: ["fotos2025/brasilnovo3.png", "fotos2025/INTERNACIONALNOVO2.png"],
+      8: ['fotos2025/brasilnovo4.png', 'fotos2025/INTERNACIONALNOVO3.png'],
+      9: []
     },
     tennis: {
-      1: ["tennisdezemrbro3.png"],
-      2: ["infelizmente.png"],
       3: ["tennis2025.png"],
       4: ["manu.webp"],
       5: ["manu.webp"],
       6: ["fotos2025/tenisnovo1.png"],
       7: ["manu.webp"],
-      // Adicionado intervalo 7
+      8: [],
+      9: []
     },
     basquete: {
-      1: ["basquetedezembro4.png"],
-      2: ["basquete2025.png"],
       3: ["basquete2025-01.png"],
       4: ["basquete2025-02.png"],
       5: ["basquete2025-03.png"],
       6: ["fotos2025/basquetenovo1.png"],
       7: ["fotos2025/basquetenovo2.png"],
-      // Adicionado intervalo 7
+      8: ['fotos2025/basquetenovo3.png'],
+      9: []
     },
     cs: {
-      1: ["csdezembrio2.png"],
-      2: ["infelizmente.png"],
       3: ["infelizmente.png"],
       4: ["infelizmente.png"],
       5: ["infelizmente.png"],
       6: ["infelizmente.png"],
-      7: ["infelizmente.png"], // Adicionado intervalo 7
+      7: ["infelizmente.png"],
+      8: [],
+      9: []
     },
     mma: {
-      1: ["infelizmente.png"],
-      2: ["infelizmente.png"],
       3: ["MMA2025.png"],
       4: ["MMA2025-01.png"],
       5: ["infelizmente.png"],
       6: ["manu.webp"],
       7: ["manu.webp"],
-      // Adicionado intervalo 7
+      8: [],
+      9: []
     },
     vollei: {
       1: ["vollei26-01.png"],
