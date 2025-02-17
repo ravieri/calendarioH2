@@ -52,7 +52,7 @@ function showSportImage(sport) {
       5: ["manu.webp"],
       6: ["fotos2025/tenisnovo1.png"],
       7: ["manu.webp"],
-      8: [],
+      8: ['fotos2025/tenisnovo2.png'],
       9: []
     },
     basquete: {
@@ -70,7 +70,7 @@ function showSportImage(sport) {
       5: ["infelizmente.png"],
       6: ["infelizmente.png"],
       7: ["infelizmente.png"],
-      8: [],
+      8: ["manu.webp"],
       9: []
     },
     mma: {
@@ -79,7 +79,7 @@ function showSportImage(sport) {
       5: ["infelizmente.png"],
       6: ["manu.webp"],
       7: ["manu.webp"],
-      8: [],
+      8: ["manu.webp"],
       9: []
     },
     vollei: {
