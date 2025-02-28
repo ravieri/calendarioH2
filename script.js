@@ -38,58 +38,58 @@ function showSportImage(sport) {
   // Mapear imagens para cada esporte e data
   const sportImages = {
     futebol: {
-      3: ["brasil2025.png", "internacional2025-01.png"],
-      4: ["brasil2025-2.png", "internacional2025-02.png"],
-      5: ["brasil2025-3.png", "internacional2025-03.png"],
-      6: ["fotos2025/brasilnovo1.png", "fotos2025/INTERNACIONALNOVO1.png"],
-      7: ["fotos2025/brasilnovo3.png", "fotos2025/INTERNACIONALNOVO2.png"],
-      8: ['fotos2025/brasilnovo4.png', 'fotos2025/INTERNACIONALNOVO3.png'],
-      9: ['fotos2025/brasilnovo5.png', 'fotos2025/INTERNACIONALNOVO4.png']
+      1: ["brasil2025-3.png", "internacional2025-03.png"],
+      2: ["fotos2025/brasilnovo1.png", "fotos2025/INTERNACIONALNOVO1.png"],
+      3: ["fotos2025/brasilnovo3.png", "fotos2025/INTERNACIONALNOVO2.png"],
+      4: ['fotos2025/brasilnovo4.png', 'fotos2025/INTERNACIONALNOVO3.png'],
+      5: ['fotos2025/brasilnovo5.png', 'fotos2025/INTERNACIONALNOVO4.png'],
+      6: ['fotos2025/brasilnovo6.png','fotos2025/INTERNACIONALNOVO5.png'], // Em branco
+      7: []  // Em branco
     },
     tennis: {
-      3: ["tennis2025.png"],
-      4: ["manu.webp"],
+      1: ["manu.webp"],
+      2: ["fotos2025/tenisnovo1.png"],
+      3: ["manu.webp"],
+      4: ['fotos2025/tenisnovo2.png'],
       5: ["manu.webp"],
-      6: ["fotos2025/tenisnovo1.png"],
-      7: ["manu.webp"],
-      8: ['fotos2025/tenisnovo2.png'],
-      9: ["manu.webp"]
+      6: ["manu.webp"], // Em branco
+      7: []  // Em branco
     },
     basquete: {
-      3: ["basquete2025-01.png"],
-      4: ["basquete2025-02.png"],
-      5: ["basquete2025-03.png"],
-      6: ["fotos2025/basquetenovo1.png"],
-      7: ["fotos2025/basquetenovo2.png"],
-      8: ['fotos2025/basquetenovo3.png'],
-      9: ['fotos2025/basquetenovo4.png']
+      1: ["basquete2025-03.png"],
+      2: ["fotos2025/basquetenovo1.png"],
+      3: ["fotos2025/basquetenovo2.png"],
+      4: ['fotos2025/basquetenovo3.png'],
+      5: ['fotos2025/basquetenovo4.png'],
+      6: ['fotos2025/basquetenovo5.png'], // Em branco
+      7: []  // Em branco
     },
     cs: {
+      1: ["infelizmente.png"],
+      2: ["infelizmente.png"],
       3: ["infelizmente.png"],
-      4: ["infelizmente.png"],
+      4: ["manu.webp"],
       5: ["infelizmente.png"],
-      6: ["infelizmente.png"],
-      7: ["infelizmente.png"],
-      8: ["manu.webp"],
-      9: ["infelizmente.png"]
+      6: ["infelizmente.png"], // Em branco
+      7: []  // Em branco
     },
     mma: {
-      3: ["MMA2025.png"],
-      4: ["MMA2025-01.png"],
-      5: ["infelizmente.png"],
-      6: ["manu.webp"],
-      7: ["manu.webp"],
-      8: ["manu.webp"],
-      9: ["manu.webp"]
+      1: ["infelizmente.png"],
+      2: ["manu.webp"],
+      3: ["manu.webp"],
+      4: ["manu.webp"],
+      5: ["manu.webp"],
+      6: ["manu.webp"], // Em branco
+      7: []  // Em branco
     },
     vollei: {
-      1: ["vollei26-01.png"],
-      2: ["infelizmente.png"],
       3: ["infelizmente.png"],
       4: ["manu.webp"],
       5: ["vollei23-29.png"],
       6: [],
-      7: [], // Adicionado intervalo 7
+      7: [], // Mantido como vazio
+      8: [], // Em branco
+      9: []  // Em branco
     },
   };
 
